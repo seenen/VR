@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 53cb30c5a09b87248a9ba5a4caba4445
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 1
+    sampleRateSetting: 0
+    sampleRateOverride: 0
+    compressionFormat: 1
+    quality: .0399999991
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: scene/69422421e0f4173af995e3b804ccd3d3.assetbundles
+  assetBundleVariant: 

@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Pro Standard Assets/UnityOctree-master/OctreeSample.unity
+  isLoaded: 1
+  isActive: 1

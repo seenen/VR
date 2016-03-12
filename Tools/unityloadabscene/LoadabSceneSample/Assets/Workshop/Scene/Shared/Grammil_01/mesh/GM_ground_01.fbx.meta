@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 066716ab9924b64498149752fe81c3c0
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: GM_ground_01
+    100004: GM_ground_02
+    100006: GM_ground_03
+    100008: GM_ground_04
+    100010: GM_ground_05
+    100012: GM_ground_06
+    100014: GM_ground_07
+    100016: GM_ground_08
+    100018: GM_ground_09
+    100020: GM_ground_10
+    100022: GM_ground_20
+    100024: GM_ground_010
+    100026: GM_ground_011
+    100028: GM_ground_012
+    100030: GM_ground_013
+    100032: GM_ground_14
+    100034: GM_ground_15
+    100036: GM_ground_16
+    100038: Grammil_01_nav
+    100040: GM_ground_12
+    100042: GM_ground_13
+    100044: GM_ground_11
+    400000: //RootNode
+    400002: GM_ground_01
+    400004: GM_ground_02
+    400006: GM_ground_03
+    400008: GM_ground_04
+    400010: GM_ground_05
+    400012: GM_ground_06
+    400014: GM_ground_07
+    400016: GM_ground_08
+    400018: GM_ground_09
+    400020: GM_ground_10
+    400022: GM_ground_20
+    400024: GM_ground_010
+    400026: GM_ground_011
+    400028: GM_ground_012
+    400030: GM_ground_013
+    400032: GM_ground_14
+    400034: GM_ground_15
+    400036: GM_ground_16
+    400038: Grammil_01_nav
+    400040: GM_ground_12
+    400042: GM_ground_13
+    400044: GM_ground_11
+    2300000: //RootNode
+    2300002: GM_ground_01
+    2300004: GM_ground_02
+    2300006: GM_ground_03
+    2300008: GM_ground_04
+    2300010: GM_ground_05
+    2300012: GM_ground_06
+    2300014: GM_ground_07
+    2300016: GM_ground_08
+    2300018: GM_ground_09
+    2300020: GM_ground_10
+    2300022: GM_ground_20
+    2300024: GM_ground_010
+    2300026: GM_ground_011
+    2300028: GM_ground_012
+    2300030: GM_ground_013
+    2300032: GM_ground_14
+    2300034: GM_ground_15
+    2300036: GM_ground_16
+    2300038: Grammil_01_nav
+    2300040: GM_ground_12
+    2300042: GM_ground_13
+    2300044: GM_ground_11
+    3300000: //RootNode
+    3300002: GM_ground_01
+    3300004: GM_ground_02
+    3300006: GM_ground_03
+    3300008: GM_ground_04
+    3300010: GM_ground_05
+    3300012: GM_ground_06
+    3300014: GM_ground_07
+    3300016: GM_ground_08
+    3300018: GM_ground_09
+    3300020: GM_ground_10
+    3300022: GM_ground_20
+    3300024: GM_ground_010
+    3300026: GM_ground_011
+    3300028: GM_ground_012
+    3300030: GM_ground_013
+    3300032: GM_ground_14
+    3300034: GM_ground_15
+    3300036: GM_ground_16
+    3300038: Grammil_01_nav
+    3300040: GM_ground_12
+    3300042: GM_ground_13
+    3300044: GM_ground_11
+    4300000: GM_ground_01
+    4300002: GM_ground_02
+    4300004: GM_ground_03
+    4300006: GM_ground_20
+    4300008: GM_ground_05
+    4300010: GM_ground_04
+    4300012: GM_ground_06
+    4300014: GM_ground_07
+    4300016: GM_ground_08
+    4300018: GM_ground_09
+    4300020: GM_ground_10
+    4300022: GM_ground_14
+    4300024: GM_ground_15
+    4300026: GM_ground_011
+    4300028: GM_ground_010
+    4300030: GM_ground_012
+    4300032: GM_ground_013
+    4300034: GM_ground_16
+    4300036: Grammil_01_nav
+    4300038: GM_ground_13
+    4300040: GM_ground_12
+    4300042: GM_ground_11
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: scene/a795b2ee2d8dde76c39f87137858f38c.assetbundles
+  assetBundleVariant: 

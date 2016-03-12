@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: GD_EasyWater
+  m_Shader: {fileID: 4800000, guid: fcb57e5cf8e979b4ca43e8e143e1313f, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Reflection
+        second:
+          m_Texture: {fileID: 8900000, guid: 7c91006bfe253c448991a8ee43e7dd67, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Texture1
+        second:
+          m_Texture: {fileID: 2800000, guid: 07bef386db52a5146addf25d48338d17, type: 3}
+          m_Scale: {x: 3, y: 3}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Texture2
+        second:
+          m_Texture: {fileID: 2800000, guid: 07bef386db52a5146addf25d48338d17, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DistortionMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 4e1f47d89e2b2a148b30e9ecd0189cea, type: 3}
+          m_Scale: {x: 2, y: 2}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap1
+        second:
+          m_Texture: {fileID: 2800000, guid: e5afed517fdafe145b3089ddfe6ffa33, type: 3}
+          m_Scale: {x: 3, y: 3}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap2
+        second:
+          m_Texture: {fileID: 2800000, guid: e5afed517fdafe145b3089ddfe6ffa33, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Alpha
+        second: .5
+      data:
+        first:
+          name: _MainTexSpeed
+        second: .180000007
+      data:
+        first:
+          name: _Texture2Speed
+        second: 0
+      data:
+        first:
+          name: _DistortionSpeed
+        second: 0
+      data:
+        first:
+          name: _DistortionPower
+        second: .0157142859
+      data:
+        first:
+          name: _ReflectPower
+        second: .25
+      data:
+        first:
+          name: _Opacity
+        second: 1.5
+      data:
+        first:
+          name: _Specular
+        second: 5.125
+      data:
+        first:
+          name: R
+        second: 1
+      data:
+        first:
+          name: G
+        second: 1
+      data:
+        first:
+          name: B
+        second: 1
+      data:
+        first:
+          name: _Gloss
+        second: 1.85892844
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .568627477, g: .895461321, b: 1, a: 1}
+      data:
+        first:
+          name: _InvFadeParemeter
+        second: {r: .150000006, g: .150000006, b: .5, a: 1}
