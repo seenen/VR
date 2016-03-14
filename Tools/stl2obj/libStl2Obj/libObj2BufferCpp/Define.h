@@ -44,15 +44,15 @@ public:
 		 z = _z;
 	}
 
-	Vector3& operator=(const Vector3& s)
-	{
-		set(this, (Vector3*)&s);
-	}
+	//Vector3& operator=(const Vector3& s)
+	//{
+	//	set(this, (Vector3*)&s);
+	//}
 
-	Vector3(const Vector3& s)
-    {
-		*this = s;
-    }
+	//Vector3(const Vector3& s)
+ //   {
+	//	*this = s;
+ //   }
 };
 
 typedef struct Vector2
@@ -68,16 +68,24 @@ public:
 		y = 0;
 	}
 
-	void set(Vector2* s1, Vector2* s2)//赋值函数
+	Vector2(float _x, float _y) 
 	{
-		s1->x = s2->x;
-		s1->y = s2->y;
+		x = _x;
+		y = _y;
 	}
 
-	Vector2& operator=(const Vector2& s)//重载运算符
-	{
-		set(this, (Vector2*)&s);
-	}
+	//void set(Vector2* s1, Vector2* s2)//赋值函数
+	//{
+	//	s1->x = s2->x;
+	//	s1->y = s2->y;
+	//}
+
+	//Vector2& operator=(const Vector2& s)//重载运算符
+	//{
+	//	set(this, (Vector2*)&s);
+
+	//	return this;
+	//}
 
 	Vector2(const Vector2& s)//复制构造函数
 	{

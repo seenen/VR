@@ -20,10 +20,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buff.cpp" />
+    <ClCompile Include="GeometryBuffer.cpp" />
+    <ClCompile Include="GroupData.cpp" />
+    <ClCompile Include="ObjectData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buff.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="GeometryBuffer.h" />
+    <ClInclude Include="GroupData.h" />
+    <ClInclude Include="ObjectData.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{09B5699F-20BB-434A-8779-A26DCED7D158}</ProjectGuid>

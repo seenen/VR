@@ -147,13 +147,12 @@ namespace libObj2Buffer
                 Vector2[] tuvs = new Vector2[od.allFaces.Count];
                 Vector3[] tnormals = new Vector3[od.allFaces.Count];
 
-                int k = 0;
-                foreach (FaceIndices fi in od.allFaces)
+                for ( int k = 0; k < od.allFaces.Count; ++k)
                 {
+                    FaceIndices fi = od.allFaces[k];
                     tvertices[k] = vertices[fi.vi];
                     if (hasUVs) tuvs[k] = uvs[fi.vu];
                     if (hasNormals) tnormals[k] = normals[fi.vn];
-                    k++;
                 }
 
                 Mesh m = (gs[i].GetComponent(typeof(MeshFilter)) as MeshFilter).mesh;
@@ -164,8 +163,8 @@ namespace libObj2Buffer
                 if (od.groups.Count == 1)
                 {
                     GroupData gd = od.groups[0];
-                    if (gd.materialName != null)
-                        gs[i].GetComponent<Renderer>().material = mats[gd.materialName];
+                    ////if (gd.materialName != null)
+                    ////    gs[i].GetComponent<Renderer>().material = mats[gd.materialName];
 
                     int[] triangles = new int[gd.faces.Count];
                     for (int j = 0; j < triangles.Length; j++) triangles[j] = j;
@@ -176,13 +175,13 @@ namespace libObj2Buffer
                 else
                 {
                     int gl = od.groups.Count;
-                    Material[] sml = new Material[gl];
+                    ////Material[] sml = new Material[gl];
                     m.subMeshCount = gl;
                     int c = 0;
 
                     for (int j = 0; j < gl; j++)
                     {
-                        sml[j] = mats[od.groups[j].materialName];
+                        ////sml[j] = mats[od.groups[j].materialName];
                         int[] triangles = new int[od.groups[j].faces.Count];
                         int l = od.groups[j].faces.Count + c;
                         int s = 0;
@@ -190,7 +189,7 @@ namespace libObj2Buffer
                         m.SetTriangles(triangles, j);
                     }
 
-                    gs[i].GetComponent<Renderer>().materials = sml;
+                    ////gs[i].GetComponent<Renderer>().materials = sml;
                 }
             }
         }

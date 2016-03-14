@@ -1,0 +1,7 @@
+F:\GitHub\VR\Tools\stl2obj\libStl2Obj\libObj2Buffer\bin\Release\libObj2Buffer.dll
+F:\GitHub\VR\Tools\stl2obj\libStl2Obj\libObj2Buffer\bin\Release\libObj2Buffer.pdb
+F:\GitHub\VR\Tools\stl2obj\libStl2Obj\libObj2Buffer\bin\Release\UnityEngine.dll
+F:\GitHub\VR\Tools\stl2obj\libStl2Obj\libObj2Buffer\bin\Release\UnityEngine.xml
+F:\GitHub\VR\Tools\stl2obj\libStl2Obj\libObj2Buffer\obj\Release\libObj2Buffer.csprojResolveAssemblyReference.cache
+F:\GitHub\VR\Tools\stl2obj\libStl2Obj\libObj2Buffer\obj\Release\libObj2Buffer.dll
+F:\GitHub\VR\Tools\stl2obj\libStl2Obj\libObj2Buffer\obj\Release\libObj2Buffer.pdb

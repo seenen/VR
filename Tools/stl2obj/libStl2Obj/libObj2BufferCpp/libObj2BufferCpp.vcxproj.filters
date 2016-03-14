@@ -18,12 +18,30 @@
     <ClCompile Include="Buff.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GeometryBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buff.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Define.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GroupData.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

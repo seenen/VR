@@ -68,6 +68,7 @@ namespace libObj2Buffer
                 }
             }
 
+            //return null;
             return buffer;
         }
 
