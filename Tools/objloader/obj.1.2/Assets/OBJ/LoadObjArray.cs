@@ -35,11 +35,29 @@ public class LoadObjArray : MonoBehaviour
         //  预生成Mesh
         if (GUI.Button(new Rect(480 - 50, 100, 50, 50), "Render"))
         {
+            StartCoroutine(Array1());
+        }
+    }
+
+    IEnumerator Array1()
+    {
+        yield return 1;
+
+        do
+        {
             string content = (string)mlistObjs[index];
 
             mOBJNoMat.LoadeContent(content);
 
             index++;
-        }
+
+            if (index == 16) index = 1;
+
+            yield return new WaitForSeconds(0.33f);
+
+            mOBJNoMat.Clear();
+
+        } while (true);
+
     }
 }
