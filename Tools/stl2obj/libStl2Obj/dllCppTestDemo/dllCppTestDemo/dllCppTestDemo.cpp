@@ -9,6 +9,7 @@
 #include <stdlib.h>  
 #include <fstream>
 #include <iostream>
+#include <omp.h> // openmp头文件
 
 using namespace std;
 
@@ -125,13 +126,14 @@ void STLTest(char* filepath)
 
 		DWORD dwStart, dwEnd, dwCount = 0;
 
-		for (int i = 0; i < 60; ++i)
+#pragma omp parallel for   //特别注意点。
+		for (int i = 1; i < 37; ++i)
 		{
 			memset(tmp, 0, MAX_PATH);
 
 			dwStart = GetTickCount();
 
-			sprintf_s(tmp,	"F:/GitHub/VR/Tools/stl2obj/Resources/BatStl/%d_%s.stl", 
+			sprintf_s(tmp,	"F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/%d.stl", 
 							i, 
 							GetFileTitleFromFileName(filepath).c_str());
 

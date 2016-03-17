@@ -50,3 +50,7 @@ Temporary Items
 */ipch/*
 *.ipch
 *.suo
+*/Library/*
+*/Debug/*
+*.obj
+*.pdb

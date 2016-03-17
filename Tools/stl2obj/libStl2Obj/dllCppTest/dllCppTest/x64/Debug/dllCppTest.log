@@ -1,1 +1,10 @@
-﻿
+﻿  UtilString.cpp
+f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\utilstring.cpp(14): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\utilstring.cpp(27): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  UtilFile.cpp
+  stl2obj.cpp
+  obj2buff.cpp
+  正在生成代码...
+    正在创建库 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\x64\Debug\dllCppTest.lib 和对象 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\x64\Debug\dllCppTest.exp
+  dllCppTest.vcxproj -> F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\x64\Debug\dllCppTest.dll
+          1 file(s) copied.

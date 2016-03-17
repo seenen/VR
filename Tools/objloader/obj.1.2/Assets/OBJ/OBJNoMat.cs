@@ -1,4 +1,4 @@
-#define usedll
+//#define usedll
 
 using UnityEngine;
 using System;
@@ -21,39 +21,40 @@ public class OBJNoMat : MonoBehaviour
     private const string UML = "usemtl";
     private string mtllib;
 
-    private GeometryBuffer buffer;
 #endif
 
-    public void LoadeContent(string text)
+    public GeometryBuffer LoadeContent(string text)
     {
         long before = System.DateTime.Now.Ticks;
+
+#if usedll
+        libObj2Buffer.GeometryBuffer buffer;
+#else
+        GeometryBuffer buffer;
+#endif
 
 #if usedll
         buffer = libObj2Buffer.Buffer.ObjContent2Buffer(text);
 #else
         buffer = new GeometryBuffer();
 
-        SetGeometryData(text);
+        SetGeometryData(buffer, text);
 #endif
 
         Debug.Log("SetGeometryData " + (System.DateTime.Now.Ticks - before) / 10000000.0);
 
         before = System.DateTime.Now.Ticks;
 
-        Build();
-
         Debug.Log("Build " + (System.DateTime.Now.Ticks - before) / 10000000.0);
-    }
 
-    public void Clear()
-    {
-
+        return buffer;
     }
 
     public MeshFilter mMeshFilter = null;
+    public MeshRenderer mMeshRenderer = null;
     public GameObject[] ms = null;
 
-    private void Build()
+    public void Build(GeometryBuffer buffer)
     {
         if (mMeshFilter == null)
         {
@@ -61,8 +62,8 @@ public class OBJNoMat : MonoBehaviour
 		
 		    if ( buffer.numObjects == 1 )
             {
-			    gameObject.AddComponent(typeof(MeshFilter));
-			    gameObject.AddComponent(typeof(MeshRenderer));
+                mMeshFilter = (MeshFilter)gameObject.AddComponent(typeof(MeshFilter));
+                mMeshRenderer = (MeshRenderer)gameObject.AddComponent(typeof(MeshRenderer));
 			    ms[0] = gameObject;
 		    }
             else if ( buffer.numObjects > 1 )
@@ -78,11 +79,63 @@ public class OBJNoMat : MonoBehaviour
 		    }
         }
 		
-		buffer.PopulateMeshes(ms, null);
-	}
+		
+        //buffer.PopulateSmoothMeshes(ms, null);
+
+        mMeshFilter.mesh = buffer.PopulateMeshes(ms, null);
+
+
+    }
+
+    public bool BuildNoMesh(GeometryBuffer buffer)
+    {
+        if (mMeshFilter == null)
+        {
+            ms = new GameObject[buffer.numObjects];
+
+            if (buffer.numObjects == 1)
+            {
+                mMeshFilter = (MeshFilter)gameObject.AddComponent(typeof(MeshFilter));
+                mMeshRenderer = (MeshRenderer)gameObject.AddComponent(typeof(MeshRenderer));
+                ms[0] = gameObject;
+            }
+            else if (buffer.numObjects > 1)
+            {
+                for (int i = 0; i < buffer.numObjects; i++)
+                {
+                    GameObject go = new GameObject();
+                    go.transform.parent = gameObject.transform;
+                    mMeshFilter = (MeshFilter)go.AddComponent(typeof(MeshFilter));
+                    go.AddComponent(typeof(MeshRenderer));
+                    ms[i] = go;
+                }
+            }
+        }
+
+        return buffer.PopulateMeshesNoMesh(ms, null);
+
+    }
+
+    public static int Cores = 0;	//SystemInfo.processorCount;	// 0 is not mt
+
+    /// <summary>
+    /// ±‰–ŒÕ∆ÀÕ
+    /// </summary>
+    /// <param name="bufferCache"></param>
+    public void DeformationMT(GeometryBuffer bufferCache)
+    {
+        if (Cores == 0)
+            Cores = SystemInfo.processorCount - 1;
+
+        mMeshFilter.mesh.vertices = bufferCache.vertices.ToArray();
+        mMeshFilter.mesh.triangles = bufferCache.triangles;
+        mMeshFilter.mesh.uv = bufferCache.uvs.ToArray();
+        mMeshFilter.mesh.RecalculateNormals();
+        mMeshFilter.mesh.RecalculateBounds();
+    }
 
 #if !usedll
-    private void SetGeometryData(string data)
+    private void SetGeometryData(GeometryBuffer buffer, string data)
     {
         string[] lines = data.Split("\n".ToCharArray());
 

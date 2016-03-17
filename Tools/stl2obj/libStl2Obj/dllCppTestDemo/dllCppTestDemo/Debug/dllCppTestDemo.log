@@ -1,2 +1,4 @@
 ﻿  dllCppTestDemo.cpp
+f:\github\vr\tools\stl2obj\libstl2obj\dllcpptestdemo\dllcpptestdemo\dllcpptestdemo.cpp(138): warning C4474: sprintf_s: 格式字符串中传递的参数太多
+  f:\github\vr\tools\stl2obj\libstl2obj\dllcpptestdemo\dllcpptestdemo\dllcpptestdemo.cpp(138): note: 占位符和其参数预计 1 可变参数，但提供的却是 2 参数
   dllCppTestDemo.vcxproj -> F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTestDemo.exe

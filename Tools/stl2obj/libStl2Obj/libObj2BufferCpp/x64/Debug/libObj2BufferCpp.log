@@ -1,1 +1,36 @@
-﻿
+﻿  ObjectData.cpp
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(16): warning C4091: “typedef ”: 没有声明变量时忽略“FaceIndices”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(56): warning C4091: “typedef ”: 没有声明变量时忽略“Vector3”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(94): warning C4091: “typedef ”: 没有声明变量时忽略“Vector2”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(73): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(74): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  GroupData.cpp
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(16): warning C4091: “typedef ”: 没有声明变量时忽略“FaceIndices”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(56): warning C4091: “typedef ”: 没有声明变量时忽略“Vector3”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(94): warning C4091: “typedef ”: 没有声明变量时忽略“Vector2”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(73): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(74): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  GeometryBuffer.cpp
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(16): warning C4091: “typedef ”: 没有声明变量时忽略“FaceIndices”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(56): warning C4091: “typedef ”: 没有声明变量时忽略“Vector3”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(94): warning C4091: “typedef ”: 没有声明变量时忽略“Vector2”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(73): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(74): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  Buff.cpp
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\buff.h(13): warning C4305: “初始化”: 从“int”到“const char”截断
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\buff.h(13): warning C4309: “初始化”: 截断常量值
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\buff.h(14): warning C4305: “初始化”: 从“int”到“const char”截断
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\buff.h(14): warning C4309: “初始化”: 截断常量值
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(16): warning C4091: “typedef ”: 没有声明变量时忽略“FaceIndices”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(56): warning C4091: “typedef ”: 没有声明变量时忽略“Vector3”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(94): warning C4091: “typedef ”: 没有声明变量时忽略“Vector2”的左侧
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(73): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\define.h(74): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\buff.cpp(51): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\buff.cpp(103): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\buff.cpp(107): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\libobj2buffercpp\buff.cpp(112): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  正在生成代码...
+    正在创建库 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\x64\Debug\libObj2BufferCpp.lib 和对象 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\x64\Debug\libObj2BufferCpp.exp
+  libObj2BufferCpp.vcxproj -> F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\x64\Debug\libObj2BufferCpp.dll
+  libObj2BufferCpp.vcxproj -> F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\x64\Debug\libObj2BufferCpp.pdb (Partial PDB)

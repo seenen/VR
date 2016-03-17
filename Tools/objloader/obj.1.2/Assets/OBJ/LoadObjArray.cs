@@ -8,11 +8,9 @@ public class LoadObjArray : MonoBehaviour
 
     ArrayList mlistObjs = new ArrayList();
 
-    int index = 0;
 
     void Start()
     {
-        index = 0;
     }
 
     void OnGUI()
@@ -22,42 +20,61 @@ public class LoadObjArray : MonoBehaviour
         {
             long before = System.DateTime.Now.Ticks;
 
-            for ( int i = 0; i < 16; i++)
+            for ( int i = 1; i < 37; i++)
             {
-                string path = "F:/GitHub/VR/Tools/stl2obj/Resources/BatStl/" + i.ToString() + "_dannang_after.obj";
+                //string path = "F:/GitHub/VR/Tools/stl2obj/Resources/BatStl/" + i.ToString() + "_dannang_after.obj";
+                string path = "F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/" + i.ToString() + ".obj";
 
-                mlistObjs.Add(File.ReadAllText(path));
+                GeometryBuffer buff = mOBJNoMat.LoadeContent(File.ReadAllText(path));
+
+                bool ret = mOBJNoMat.BuildNoMesh(buff);
+
+                Debug.Log(i + "[flag:] " + ret + " -> [V:] " + buff.vertices.Count + " [T:] " + buff.triangles.Length);
+
+                mlistObjs.Add(buff);
+
             }
 
             Debug.Log("RreLoadObj 16 " + (System.DateTime.Now.Ticks - before) / 10000000.0);
         }
 
         //  预生成Mesh
-        if (GUI.Button(new Rect(480 - 50, 100, 50, 50), "Render"))
+        if (GUI.Button(new Rect(480 - 50, 100, 50, 50), "Init"))
+        {
+            Init();
+        }
+
+        //  预生成Mesh
+        if (GUI.Button(new Rect(480 - 50, 150, 50, 50), "Render"))
         {
             StartCoroutine(Array1());
         }
+    }
+
+    void Init()
+    {
+        mOBJNoMat.Build((GeometryBuffer)mlistObjs[0]);
     }
 
     IEnumerator Array1()
     {
         yield return 1;
 
+        int index = 2;
+
         do
         {
-            string content = (string)mlistObjs[index];
+            GeometryBuffer content = (GeometryBuffer)mlistObjs[index];
 
-            mOBJNoMat.LoadeContent(content);
+            mOBJNoMat.DeformationMT(content);
 
             index++;
 
-            if (index == 16) index = 1;
+            if (index == 36) index = 2;
 
             yield return new WaitForSeconds(0.33f);
 
-            mOBJNoMat.Clear();
-
-        } while (true);
+        } while (false);
 
     }
 }

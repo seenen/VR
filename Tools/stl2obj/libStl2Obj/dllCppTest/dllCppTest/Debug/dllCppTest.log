@@ -1,7 +1,4 @@
-﻿  stl2obj.cpp
-f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stl2obj.cpp(60): warning C4018: “<”: 有符号/无符号不匹配
-f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stl2obj.cpp(103): warning C4018: “<”: 有符号/无符号不匹配
-f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stl2obj.cpp(105): warning C4018: “<”: 有符号/无符号不匹配
+﻿  obj2buff.cpp
     正在创建库 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.lib 和对象 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.exp
   dllCppTest.vcxproj -> F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.dll
           1 file(s) copied.
