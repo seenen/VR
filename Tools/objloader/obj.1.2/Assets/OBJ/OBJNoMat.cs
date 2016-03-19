@@ -84,6 +84,9 @@ public class OBJNoMat : MonoBehaviour
 
         mMeshFilter.mesh = buffer.PopulateMeshes(ms, null);
 
+        Debug.Log(  "Mesh -> [vertexCount:] " + mMeshFilter.mesh.vertexCount + 
+                    " [triangles:] " + mMeshFilter.mesh.triangles.Length +
+                    " [normals:] " + mMeshFilter.mesh.normals.Length);
 
     }
 
@@ -127,7 +130,9 @@ public class OBJNoMat : MonoBehaviour
         if (Cores == 0)
             Cores = SystemInfo.processorCount - 1;
 
-        mMeshFilter.mesh.vertices = bufferCache.vertices.ToArray();
+        //Vector3[] vertices = SmoothFilter.laplacianFilter(bufferCache.tvertices, bufferCache.triangles);
+
+        mMeshFilter.mesh.vertices = bufferCache.tvertices;
         mMeshFilter.mesh.triangles = bufferCache.triangles;
         mMeshFilter.mesh.uv = bufferCache.uvs.ToArray();
         mMeshFilter.mesh.normals = bufferCache.normals.ToArray();

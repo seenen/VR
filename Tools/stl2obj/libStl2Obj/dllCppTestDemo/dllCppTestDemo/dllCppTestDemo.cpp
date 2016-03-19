@@ -133,11 +133,9 @@ void STLTest(char* filepath)
 
 			dwStart = GetTickCount();
 
-			sprintf_s(tmp,	"F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/%d.stl", 
-							i, 
-							GetFileTitleFromFileName(filepath).c_str());
+			sprintf_s(tmp, "F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/%d.stl", i);
 
-			CopyFile(filepath, tmp);
+			//CopyFile(filepath, tmp);
 
 			cout << "tmp : " << tmp << endl;
 

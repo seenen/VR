@@ -13,7 +13,7 @@ public class ObjMeshDisplay : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         if (triangles == null ||
-            normals == null ||
+            //normals == null ||
             //tangents == null ||
             vertices == null)
             return;
@@ -61,7 +61,7 @@ public class ObjMeshDisplay : MonoBehaviour
 
         triangles = content.triangles;
         normals = content.normals.ToArray();
-        vertices = content.vertices.ToArray();
+        vertices = content.tvertices;
 
         Debug.Log("[triangles:] " + triangles.Length + "[normals:] " + normals.Length + "[vertices:] " + vertices.Length);
     }

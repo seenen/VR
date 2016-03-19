@@ -20,7 +20,7 @@ public class LoadObjArray : MonoBehaviour
         {
             long before = System.DateTime.Now.Ticks;
 
-            for ( int i = 1; i < 2; i++)
+            for ( int i = 1; i < 37; i++)
             {
                 //string path = "F:/GitHub/VR/Tools/stl2obj/Resources/BatStl/" + i.ToString() + "_dannang_after.obj";
                 string path = "F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/" + i.ToString() + ".obj";
@@ -53,22 +53,23 @@ public class LoadObjArray : MonoBehaviour
 
     void Init()
     {
-        mOBJNoMat.Build((GeometryBuffer)mlistObjs[0]);
+        GeometryBuffer gb = (GeometryBuffer)mlistObjs[0];
 
-        mObjMeshDisplay.UpdateGizmos((GeometryBuffer)mlistObjs[0]);
+        mOBJNoMat.Build(gb);
+
+        mObjMeshDisplay.UpdateGizmos(gb);
     }
 
     public ObjMeshDisplay mObjMeshDisplay = null;
 
+    public int index = 2;
     IEnumerator Array1()
     {
         yield return 1;
 
-        int index = 2;
-
-        //do
-        //{
-            GeometryBuffer content = (GeometryBuffer)mlistObjs[0];
+        do
+        {
+            GeometryBuffer content = (GeometryBuffer)mlistObjs[index];
 
             mOBJNoMat.DeformationMT(content);
 
@@ -76,9 +77,9 @@ public class LoadObjArray : MonoBehaviour
 
             if (index == 36) index = 2;
 
-            yield return new WaitForSeconds(0.33f);
+            yield return new WaitForSeconds(0.010f);
 
-        //} while (false);
+        } while (true);
 
     }
 }
