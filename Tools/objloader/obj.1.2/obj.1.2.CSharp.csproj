@@ -74,9 +74,16 @@
     <Compile Include="Assets\MeshSmoother\TestSmoothFilter.cs" />
     <Compile Include="Assets\OBJ\LoadObjArray.cs" />
     <Compile Include="Assets\OBJ\OBJNoMat.cs" />
+    <Compile Include="Assets\OBJ\ObjMeshDisplay.cs" />
     <Compile Include="Assets\OBJ\src\FaceIndices.cs" />
     <Compile Include="Assets\OBJ\src\GeometryBuffer.cs" />
     <Compile Include="Assets\OBJ\src\OBJ.cs" />
+    <Compile Include="Assets\ProceduralMesh\MengerSponge.cs" />
+    <Compile Include="Assets\ProceduralMesh\MeshDisplay.cs" />
+    <Compile Include="Assets\ProceduralMesh\Sierpinsky.cs" />
+    <Compile Include="Assets\ProceduralMesh\SimpleProceduralCube.cs" />
+    <Compile Include="Assets\ProceduralMesh\Tetrahedron.cs" />
+    <Compile Include="Assets\ProceduralMesh\TetrahedronUV.cs" />
     <Compile Include="Assets\Unity-Obj-Loader\ObjMaterial.cs" />
     <Compile Include="Assets\Unity-Obj-Loader\ObjMesh.cs" />
     <Compile Include="Assets\Unity-Obj-Loader\ObjModelLoader.cs" />
