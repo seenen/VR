@@ -130,6 +130,7 @@ public class OBJNoMat : MonoBehaviour
         mMeshFilter.mesh.vertices = bufferCache.vertices.ToArray();
         mMeshFilter.mesh.triangles = bufferCache.triangles;
         mMeshFilter.mesh.uv = bufferCache.uvs.ToArray();
+        mMeshFilter.mesh.normals = bufferCache.normals.ToArray();
         mMeshFilter.mesh.RecalculateNormals();
         mMeshFilter.mesh.RecalculateBounds();
     }

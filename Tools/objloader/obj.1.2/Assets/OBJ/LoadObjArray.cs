@@ -54,7 +54,11 @@ public class LoadObjArray : MonoBehaviour
     void Init()
     {
         mOBJNoMat.Build((GeometryBuffer)mlistObjs[0]);
+
+        mObjMeshDisplay.UpdateGizmos((GeometryBuffer)mlistObjs[0]);
     }
+
+    public ObjMeshDisplay mObjMeshDisplay = null;
 
     IEnumerator Array1()
     {
@@ -62,8 +66,8 @@ public class LoadObjArray : MonoBehaviour
 
         int index = 2;
 
-        do
-        {
+        //do
+        //{
             GeometryBuffer content = (GeometryBuffer)mlistObjs[0];
 
             mOBJNoMat.DeformationMT(content);
@@ -74,7 +78,7 @@ public class LoadObjArray : MonoBehaviour
 
             yield return new WaitForSeconds(0.33f);
 
-        } while (false);
+        //} while (false);
 
     }
 }
