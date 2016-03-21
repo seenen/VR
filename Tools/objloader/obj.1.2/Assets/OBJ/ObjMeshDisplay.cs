@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class ObjMeshDisplay : MonoBehaviour
 {
     public bool showNormals = true;
@@ -10,11 +11,12 @@ public class ObjMeshDisplay : MonoBehaviour
     public Color normalColor = Color.red;
     public Color tangentColor = Color.blue;
 
-    void OnDrawGizmosSelected()
+    //void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         if (triangles == null ||
-            //normals == null ||
-            //tangents == null ||
+            normals == null ||
+            tangents == null ||
             vertices == null)
             return;
 
@@ -44,6 +46,10 @@ public class ObjMeshDisplay : MonoBehaviour
     public Vector3[] normals;
     public Vector4[] tangents;
     public Vector3[] vertices;
+    public int triangles_count;
+    public int normals_count;
+    public int tangents_count;
+    public int vertices_count;
 
     public void UpdateGizmos(GeometryBuffer content)
     {
@@ -63,6 +69,56 @@ public class ObjMeshDisplay : MonoBehaviour
         normals = content.normals.ToArray();
         vertices = content.tvertices;
 
+        triangles_count = triangles.Length;
+        normals_count = normals.Length;
+        tangents_count = 0;
+        vertices_count = tangents.Length;
+
         Debug.Log("[triangles:] " + triangles.Length + "[normals:] " + normals.Length + "[vertices:] " + vertices.Length);
+    }
+
+    public bool bUpdateGizmos = false;
+
+    void UpdateMesh()
+    {
+        if (!bUpdateGizmos)
+            return;
+
+        MeshFilter meshFilter = GetComponent<MeshFilter>();
+
+        if (meshFilter == null)
+        {
+            Debug.LogWarning("Cannot find MeshFilter");
+            return;
+        }
+        Mesh mesh = meshFilter.sharedMesh;
+        if (mesh == null)
+        {
+            Debug.LogWarning("Cannot find mesh");
+            return;
+        }
+
+        triangles = meshFilter.mesh.triangles;
+        normals = meshFilter.mesh.normals;
+        vertices = meshFilter.mesh.vertices;
+        tangents = meshFilter.mesh.tangents;
+
+        Debug.Log("[triangles:] " + triangles.Length +
+                    "[normals:] " + normals.Length +
+                    "[vertices:] " + vertices.Length +
+                    "[tangents:] " + tangents.Length);
+
+        triangles_count = triangles.Length;
+        normals_count = normals.Length;
+        tangents_count = vertices.Length;
+        vertices_count = tangents.Length;
+
+        bUpdateGizmos = false;
+    }
+
+    [ExecuteInEditMode]
+    public void Update()
+    {
+        UpdateMesh();
     }
 }

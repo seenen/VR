@@ -52,6 +52,7 @@ public class OBJNoMat : MonoBehaviour
 
     public MeshFilter mMeshFilter = null;
     public MeshRenderer mMeshRenderer = null;
+    public Material mMaterial = null;
     public GameObject[] ms = null;
 
     public void Build(GeometryBuffer buffer)
@@ -88,6 +89,7 @@ public class OBJNoMat : MonoBehaviour
                     " [triangles:] " + mMeshFilter.mesh.triangles.Length +
                     " [normals:] " + mMeshFilter.mesh.normals.Length);
 
+        mMeshRenderer.material = mMaterial;
     }
 
     public bool BuildNoMesh(GeometryBuffer buffer)

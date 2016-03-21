@@ -20,9 +20,8 @@ public class LoadObjArray : MonoBehaviour
         {
             long before = System.DateTime.Now.Ticks;
 
-            for ( int i = 1; i < 37; i++)
+            for ( int i = 1; i < 10; i++)
             {
-                //string path = "F:/GitHub/VR/Tools/stl2obj/Resources/BatStl/" + i.ToString() + "_dannang_after.obj";
                 string path = "F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/" + i.ToString() + ".obj";
 
                 GeometryBuffer buff = mOBJNoMat.LoadeContent(File.ReadAllText(path));
@@ -75,7 +74,7 @@ public class LoadObjArray : MonoBehaviour
 
             index++;
 
-            if (index == 36) index = 2;
+            if (index == 9) index = 2;
 
             yield return new WaitForSeconds(0.010f);
 

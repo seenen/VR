@@ -104,5 +104,9 @@
     <Compile Include="Assets\ProceduralMesh\Editor\TetrahedronEditor.cs" />
     <Compile Include="Assets\ProceduralMesh\Editor\TetrahedronEditorUV.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shader\Phong Tessellation.shader" />
+    <None Include="Assets\Shader\Tessellation Sample.shader" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

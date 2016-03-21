@@ -43,30 +43,30 @@ options.normalize = 1;
 disp('--> Computing laplacian');
 L = compute_mesh_laplacian(vertex,face,laplacian_type,options);
 
-%% heat diffusion flow
-Tlist = [0 10 40 200];
-options.dt = 0.3;
-clf;
-for i=1:length(Tlist)
-    options.Tmax = Tlist(i);
-    vertex1 = perform_mesh_heat_diffusion(vertex,face,L,options);
-    % display
-    subplot(1,length(Tlist),i);
-    plot_mesh(vertex1,face,options);
-    shading interp; camlight; axis tight;
-end
+% %% heat diffusion flow
+% Tlist = [0 10 40 200];
+% options.dt = 0.3;
+% clf;
+% for i=1:length(Tlist)
+%     options.Tmax = Tlist(i);
+%     vertex1 = perform_mesh_heat_diffusion(vertex,face,L,options);
+%     % display
+%     subplot(1,length(Tlist),i);
+%     plot_mesh(vertex1,face,options);
+%     shading interp; camlight; axis tight;
+% end
 saveas(gcf, [rep name '-smoothing-' laplacian_type '.png'], 'png');
 
 %% quadratic regularization
 clf;
-for i=1:length(Tlist)
-    At = speye(nvert) + Tlist(i)*L;
-    vertex1 = (At\vertex');
-    % display
-    subplot(1,length(Tlist),i);
-    plot_mesh(vertex1,face,options);
-    shading interp; camlight; axis tight;
-end
+% for i=1:length(Tlist)
+%     At = speye(nvert) + Tlist(i)*L;
+%     vertex1 = (At\vertex');
+%     % display
+%     subplot(1,length(Tlist),i);
+%     plot_mesh(vertex1,face,options);
+%     shading interp; camlight; axis tight;
+% end
 saveas(gcf, [rep name '-quadreg-' laplacian_type '.png'], 'png');
 
 %% non linear L1 minimization

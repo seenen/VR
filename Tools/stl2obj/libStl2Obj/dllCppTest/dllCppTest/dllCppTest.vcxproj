@@ -165,14 +165,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="dataStruct.h" />
-    <ClInclude Include="obj2buff.h" />
+    <ClInclude Include="primitives.h" />
+    <ClInclude Include="Smooth.h" />
     <ClInclude Include="stl2obj.h" />
+    <ClInclude Include="STLReader.h" />
     <ClInclude Include="UtilFile.h" />
     <ClInclude Include="UtilString.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="obj2buff.cpp" />
+    <ClCompile Include="..\ivcon.cpp" />
+    <ClCompile Include="Smooth.cpp" />
     <ClCompile Include="stl2obj.cpp" />
+    <ClCompile Include="STLReader.cpp" />
     <ClCompile Include="UtilFile.cpp" />
     <ClCompile Include="UtilString.cpp" />
   </ItemGroup>

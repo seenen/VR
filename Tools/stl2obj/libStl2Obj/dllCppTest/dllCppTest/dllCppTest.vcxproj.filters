@@ -27,7 +27,13 @@
     <ClInclude Include="UtilFile.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="obj2buff.h">
+    <ClInclude Include="primitives.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Smooth.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="STLReader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,7 +47,13 @@
     <ClCompile Include="UtilFile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="obj2buff.cpp">
+    <ClCompile Include="Smooth.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="STLReader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ivcon.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
