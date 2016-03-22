@@ -23,7 +23,11 @@ public class OBJNoMat : MonoBehaviour
 
 #endif
 
+#if usedll
+    public libObj2Buffer.GeometryBuffer LoadeContent(string text)
+#else
     public GeometryBuffer LoadeContent(string text)
+#endif
     {
         long before = System.DateTime.Now.Ticks;
 
@@ -90,6 +94,10 @@ public class OBJNoMat : MonoBehaviour
                     " [normals:] " + mMeshFilter.mesh.normals.Length);
 
         mMeshRenderer.material = mMaterial;
+
+        mMeshFilter.mesh.RecalculateNormals();
+        mMeshFilter.mesh.RecalculateBounds();
+
     }
 
     public bool BuildNoMesh(GeometryBuffer buffer)
@@ -134,7 +142,7 @@ public class OBJNoMat : MonoBehaviour
 
         //Vector3[] vertices = SmoothFilter.laplacianFilter(bufferCache.tvertices, bufferCache.triangles);
 
-        mMeshFilter.mesh.vertices = bufferCache.tvertices;
+        mMeshFilter.mesh.vertices = bufferCache.vertices.ToArray();
         mMeshFilter.mesh.triangles = bufferCache.triangles;
         mMeshFilter.mesh.uv = bufferCache.uvs.ToArray();
         mMeshFilter.mesh.normals = bufferCache.normals.ToArray();

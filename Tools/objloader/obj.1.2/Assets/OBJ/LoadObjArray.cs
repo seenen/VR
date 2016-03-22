@@ -76,7 +76,8 @@ public class LoadObjArray : MonoBehaviour
 
             if (index == 9) index = 2;
 
-            yield return new WaitForSeconds(0.010f);
+            yield return new WaitForSeconds(2);
+            //yield return new WaitForSeconds(0.010f);
 
         } while (true);
 

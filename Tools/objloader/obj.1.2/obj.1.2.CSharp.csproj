@@ -79,6 +79,8 @@
     <Compile Include="Assets\OBJ\src\FaceIndices.cs" />
     <Compile Include="Assets\OBJ\src\GeometryBuffer.cs" />
     <Compile Include="Assets\OBJ\src\OBJ.cs" />
+    <Compile Include="Assets\ObjImporter 一个新的导入obj方案\ObjImporter.cs" />
+    <Compile Include="Assets\ObjImporter 一个新的导入obj方案\ObjImporterSample.cs" />
     <Compile Include="Assets\ProceduralMesh\MengerSponge.cs" />
     <Compile Include="Assets\ProceduralMesh\MeshDisplay.cs" />
     <Compile Include="Assets\ProceduralMesh\Sierpinsky.cs" />

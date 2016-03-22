@@ -53,7 +53,7 @@
     <ClCompile Include="STLReader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\ivcon.cpp">
+    <ClCompile Include="ivcon.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

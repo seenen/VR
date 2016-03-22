@@ -14,7 +14,7 @@ void Sample()
 
 	dwStart = GetTickCount();
 
-	std::string filepath = "F:/GitHub/VR/Tools/stl2obj/Resources/pacman_ghost_holder_coarse.stl";
+	std::string filepath = "F:/GitHub/VR/Tools/stl2obj/Resources/BinStl/pacman_ghost_holder_coarse.stl";
 
 	indexed_mesh im;
 

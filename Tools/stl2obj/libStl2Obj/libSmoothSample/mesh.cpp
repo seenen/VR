@@ -1,5 +1,14 @@
 #include "mesh.h"
 
+bool indexed_mesh::load_from_ascii_stereo_lithography_file(const char *const file_name, const bool generate_normals, const size_t buffer_width)
+{
+	clear();
+
+	cout << "Reading file: " << file_name << endl;
+
+	return true;
+}
+
 bool indexed_mesh::load_from_binary_stereo_lithography_file(const char *const file_name, const bool generate_normals, const size_t buffer_width)
 {
 	clear();

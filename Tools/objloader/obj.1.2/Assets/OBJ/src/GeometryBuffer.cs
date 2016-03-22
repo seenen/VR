@@ -142,9 +142,9 @@ public class GeometryBuffer
 			ObjectData od = objects[i];
 			
 			if(od.name != "default") gs[i].name = od.name;
-			
-			Vector3[] tvertices = new Vector3[od.allFaces.Count];
-			Vector2[] tuvs = new Vector2[od.allFaces.Count];
+
+            Vector3[] tvertices = new Vector3[od.allFaces.Count];
+            Vector2[] tuvs = new Vector2[od.allFaces.Count];
 			Vector3[] tnormals = new Vector3[od.allFaces.Count];
 		
 			int k = 0;
@@ -157,7 +157,7 @@ public class GeometryBuffer
 			}
 		
 			m = (gs[i].GetComponent(typeof(MeshFilter)) as MeshFilter).mesh;
-			m.vertices = tvertices;
+            m.vertices = tvertices;
 			if(hasUVs) m.uv = tuvs;
 			if(hasNormals) m.normals = tnormals;
 			

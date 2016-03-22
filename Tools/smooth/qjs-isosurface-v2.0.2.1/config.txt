@@ -1,0 +1,12 @@
+100     // Grid resolution (an unsigned integer)
+-1.5    // Grid minimum extent (a real number)
+1.5     // Grid maximum extent (a real number)
+8       // Maximum iterations (an unsigned integer)
+4.0     // Threshold (a real number)
+0.0     // Z.w (a real number)
+0.3     // C.x (a real number)
+0.5     // C.y (a real number)
+0.4     // C.z (a real number)
+0.2     // C.w (a real number)
+Z = sin(Z) + C * sin(Z)  // Iterative equation
+

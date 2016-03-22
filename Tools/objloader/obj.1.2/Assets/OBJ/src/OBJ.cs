@@ -252,6 +252,9 @@ public class OBJ : MonoBehaviour
 
 	private void Build()
     {
+        MeshFilter mf = null;
+        MeshRenderer mr = null;
+
         Dictionary<string, Material> materials = new Dictionary<string, Material>();
 
         if (hasMaterials)
@@ -270,8 +273,8 @@ public class OBJ : MonoBehaviour
 		
 		if(buffer.numObjects == 1)
         {
-			gameObject.AddComponent(typeof(MeshFilter));
-			gameObject.AddComponent(typeof(MeshRenderer));
+            mf = (MeshFilter)gameObject.AddComponent(typeof(MeshFilter));
+            mr = (MeshRenderer)gameObject.AddComponent(typeof(MeshRenderer));
 			ms[0] = gameObject;
 		}
         else if(buffer.numObjects > 1)
@@ -287,7 +290,10 @@ public class OBJ : MonoBehaviour
 		}
 		
 		buffer.PopulateMeshes(ms, materials);
-	}
+
+        mf.mesh.RecalculateNormals();
+
+    }
 
     public bool ReCalNormals = false;
 

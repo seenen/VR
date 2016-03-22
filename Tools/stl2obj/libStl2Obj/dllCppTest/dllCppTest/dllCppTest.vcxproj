@@ -173,7 +173,7 @@
     <ClInclude Include="UtilString.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\ivcon.cpp" />
+    <ClCompile Include="ivcon.cpp" />
     <ClCompile Include="Smooth.cpp" />
     <ClCompile Include="stl2obj.cpp" />
     <ClCompile Include="STLReader.cpp" />

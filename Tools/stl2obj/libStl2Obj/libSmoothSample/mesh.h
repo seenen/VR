@@ -50,6 +50,7 @@ public:
 	vector<vertex_3> vertex_normals;
 	vector<vertex_3> triangle_normals;
 
+	bool load_from_ascii_stereo_lithography_file(const char *const file_name, const bool generate_normals = true, const size_t buffer_width = 65536);
 	bool load_from_binary_stereo_lithography_file(const char *const file_name, const bool generate_normals = true, const size_t buffer_width = 65536);
 	bool save_to_binary_stereo_lithography_file(const char *const file_name, const size_t buffer_width = 65536);
 	bool save_to_povray_mesh2_file(const char *const file_name, const bool write_vertex_normals = false);
