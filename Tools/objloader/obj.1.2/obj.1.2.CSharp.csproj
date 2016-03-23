@@ -66,6 +66,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CustomerLaplace\PointAttachmentInfo.cs" />
+    <Compile Include="Assets\CustomerLaplace\Smooth.cs" />
+    <Compile Include="Assets\CustomerLaplace\SmoothSample.cs" />
+    <Compile Include="Assets\CustomerLaplace\_Mesh.cs" />
+    <Compile Include="Assets\CustomerLaplace\_Triangle.cs" />
+    <Compile Include="Assets\CustomerLaplace\_Vector3.cs" />
     <Compile Include="Assets\DataFileObj\DataFileObj.cs" />
     <Compile Include="Assets\FpsCounter.cs" />
     <Compile Include="Assets\HeroConsole.cs" />

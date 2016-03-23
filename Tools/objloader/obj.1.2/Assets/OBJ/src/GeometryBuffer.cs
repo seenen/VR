@@ -131,7 +131,7 @@ public class GeometryBuffer
 	public bool hasUVs { get { return uvs.Count > 0; } }
 	public bool hasNormals { get { return normals.Count > 0; } }
 	
-	public Mesh PopulateMeshes(GameObject[] gs, Dictionary<string, Material> mats)
+	public Mesh PopulateMeshes(GameObject[] gs, Dictionary<string, Material> mats, bool Smooth = false)
     {
 		if(gs.Length != numObjects) return null; // Should not happen unless obj file is corrupt...
 
@@ -253,69 +253,6 @@ public class GeometryBuffer
         return true;
     }
 
-    public void PopulateSmoothMeshes(GameObject[] gs, Dictionary<string, Material> mats)
-    {
-        if (gs.Length != numObjects) return; // Should not happen unless obj file is corrupt...
-
-        for (int i = 0; i < gs.Length; i++)
-        {
-            ObjectData od = objects[i];
-
-            if (od.name != "default") gs[i].name = od.name;
-
-            Vector3[] tvertices = new Vector3[od.allFaces.Count];
-            Vector2[] tuvs = new Vector2[od.allFaces.Count];
-            Vector3[] tnormals = new Vector3[od.allFaces.Count];
-
-            int k = 0;
-            foreach (FaceIndices fi in od.allFaces)
-            {
-                tvertices[k] = vertices[fi.vi];
-                if (hasUVs) tuvs[k] = uvs[fi.vu];
-                if (hasNormals) tnormals[k] = normals[fi.vn];
-                k++;
-            }
-
-            Mesh m = (gs[i].GetComponent(typeof(MeshFilter)) as MeshFilter).mesh;
-            //m.vertices = tvertices;
-            if (hasUVs) m.uv = tuvs;
-            if (hasNormals) m.normals = tnormals;
-
-            if (od.groups.Count == 1)
-            {
-                GroupData gd = od.groups[0];
-                if (gd.materialName != null)
-                    gs[i].GetComponent<Renderer>().material = mats[gd.materialName];
-
-                int[] triangles = new int[gd.faces.Count];
-                for (int j = 0; j < triangles.Length; j++) triangles[j] = j;
-
-                m.triangles = triangles;
-
-                m.vertices = SmoothFilter.laplacianFilter(tvertices, triangles);
-            }
-            else
-            {
-                int gl = od.groups.Count;
-                Material[] sml = new Material[gl];
-                m.subMeshCount = gl;
-                int c = 0;
-
-                for (int j = 0; j < gl; j++)
-                {
-                    sml[j] = mats[od.groups[j].materialName];
-                    int[] triangles = new int[od.groups[j].faces.Count];
-                    int l = od.groups[j].faces.Count + c;
-                    int s = 0;
-                    for (; c < l; c++, s++) triangles[s] = c;
-                    m.SetTriangles(triangles, j);
-                }
-
-                gs[i].GetComponent<Renderer>().materials = sml;
-            }
-
-        }
-    }
 }
 
 

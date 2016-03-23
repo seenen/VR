@@ -51,20 +51,12 @@ public class ObjMeshDisplay : MonoBehaviour
     public int tangents_count;
     public int vertices_count;
 
+    /// <summary>
+    /// 顶点填充
+    /// </summary>
+    /// <param name="content"></param>
     public void UpdateGizmos(GeometryBuffer content)
     {
-        //if (meshFilter == null)
-        //{
-        //    Debug.LogWarning("Cannot find MeshFilter");
-        //    return;
-        //}
-        //Mesh mesh = meshFilter.sharedMesh;
-        //if (mesh == null)
-        //{
-        //    Debug.LogWarning("Cannot find mesh");
-        //    return;
-        //}
-
         triangles = content.triangles;
         normals = content.normals.ToArray();
         vertices = content.tvertices;
@@ -79,6 +71,9 @@ public class ObjMeshDisplay : MonoBehaviour
 
     public bool bUpdateGizmos = false;
 
+    /// <summary>
+    /// 刷新显示
+    /// </summary>
     void UpdateMesh()
     {
         if (!bUpdateGizmos)

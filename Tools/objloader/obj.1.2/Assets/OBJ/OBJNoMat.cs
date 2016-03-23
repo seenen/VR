@@ -59,6 +59,7 @@ public class OBJNoMat : MonoBehaviour
     public Material mMaterial = null;
     public GameObject[] ms = null;
 
+    //  创建Mesh并渲染
     public void Build(GeometryBuffer buffer)
     {
         if (mMeshFilter == null)
@@ -100,6 +101,26 @@ public class OBJNoMat : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 渲染Mesh
+    /// </summary>
+    /// <param name="mesh"></param>
+    public void Build(Mesh mesh)
+    {
+        if (mMeshFilter == null)
+        {
+            mMeshFilter = (MeshFilter)gameObject.AddComponent(typeof(MeshFilter));
+
+            mMeshRenderer = (MeshRenderer)gameObject.AddComponent(typeof(MeshRenderer));
+            mMeshRenderer.material = mMaterial;
+        }
+
+        mMeshFilter.mesh = mesh;
+
+        mMeshFilter.mesh.RecalculateNormals();
+        mMeshFilter.mesh.RecalculateBounds();
+    }
+
     public bool BuildNoMesh(GeometryBuffer buffer)
     {
         if (mMeshFilter == null)
@@ -126,7 +147,43 @@ public class OBJNoMat : MonoBehaviour
         }
 
         return buffer.PopulateMeshesNoMesh(ms, null);
+    }
 
+    /// <summary>
+    /// 创建带Mesh的对象,只针对单个物体
+    /// </summary>
+    /// <param name="buffer"></param>
+    /// <returns></returns>
+    public Mesh BuildWithMesh(GeometryBuffer buffer, bool Smooth = false)
+    {
+        GameObject meshGo = new GameObject();
+
+        GameObject[] ms = new GameObject[buffer.numObjects];
+
+        //if (mMeshFilter == null)
+        {
+            //ms = new GameObject[buffer.numObjects];
+
+            if (buffer.numObjects == 1)
+            {
+                meshGo.AddComponent(typeof(MeshFilter));
+                meshGo.AddComponent(typeof(MeshRenderer));
+                ms[0] = meshGo;
+            }
+            else if (buffer.numObjects > 1)
+            {
+                for (int i = 0; i < buffer.numObjects; i++)
+                {
+                    GameObject go = new GameObject();
+                    go.transform.parent = meshGo.transform;
+                    go.AddComponent(typeof(MeshFilter));
+                    go.AddComponent(typeof(MeshRenderer));
+                    ms[i] = go;
+                }
+            }
+        }
+
+        return buffer.PopulateMeshes(ms, null, Smooth);
     }
 
     public static int Cores = 0;	//SystemInfo.processorCount;	// 0 is not mt
