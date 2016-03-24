@@ -31,8 +31,8 @@ public class TestSmoothFilter : MonoBehaviour
         // Apply Laplacian Smoothing Filter to Mesh
         int iterations = 1;
         for (int i = 0; i < iterations; i++)
-            //workingMesh.vertices = SmoothFilter.laplacianFilter(workingMesh.vertices, workingMesh.triangles);
-            workingMesh.vertices = SmoothFilter.hcFilter(sourceMesh.vertices, workingMesh.vertices, workingMesh.triangles, 0.0f, 0.5f);
+            workingMesh.vertices = SmoothFilter.laplacianFilter(workingMesh.vertices, workingMesh.triangles);
+            //workingMesh.vertices = SmoothFilter.hcFilter(sourceMesh.vertices, workingMesh.vertices, workingMesh.triangles, 0.0f, 0.5f);
     }
 
     // Clone a mesh

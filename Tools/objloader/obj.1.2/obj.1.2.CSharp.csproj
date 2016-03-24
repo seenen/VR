@@ -66,6 +66,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CustomerLaplace\MaterialManager.cs" />
+    <Compile Include="Assets\CustomerLaplace\ObjManager.cs" />
+    <Compile Include="Assets\CustomerLaplace\PlyManager.cs" />
     <Compile Include="Assets\CustomerLaplace\PointAttachmentInfo.cs" />
     <Compile Include="Assets\CustomerLaplace\Smooth.cs" />
     <Compile Include="Assets\CustomerLaplace\SmoothSample.cs" />

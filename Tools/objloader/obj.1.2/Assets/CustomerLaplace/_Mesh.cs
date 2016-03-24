@@ -32,6 +32,7 @@ public class _Mesh : System.IDisposable
     {
         long index = (long)Vertices.Count;
         Vertices.Add(toAdd);
+
         return index;
     }
 
@@ -39,6 +40,7 @@ public class _Mesh : System.IDisposable
     {
         long index = (long)Faces.Count;
         Faces.Add(tri);
+
         return index;
     }
 
@@ -61,6 +63,7 @@ public class _Mesh : System.IDisposable
             vertexAdjacencyList.Capacity = 6;
             AdjInfos[i].VertexAdjacencyList = vertexAdjacencyList;
         }
+
         for (int i = 0; i < fcount; i++)
         {
             _Triangle t = Faces[i];
@@ -124,6 +127,7 @@ public class _Mesh : System.IDisposable
             if (AdjInfos[i].VertexAdjacencyList != null)
             {
                 AdjInfos[i].VertexAdjacencyList.Clear();
+                AdjInfos[i].Dispose();
                 AdjInfos[i].VertexAdjacencyList = null;
             }
         }

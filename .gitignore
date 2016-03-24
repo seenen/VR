@@ -55,3 +55,4 @@ Temporary Items
 *.obj
 *.pdb
 *.pch
+*\Library\*

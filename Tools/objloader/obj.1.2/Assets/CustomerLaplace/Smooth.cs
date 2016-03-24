@@ -7,25 +7,49 @@ public class Smooth
 {
     Mesh objMesh = null;
 
+    Vector3[] retVec3;
+
     public Smooth(Mesh mesh)
     {
         objMesh = mesh;
     }
 
-    public Mesh Exe()
+    public Vector3[] Exe()
     {
+        retVec3 = new Vector3[objMesh.vertexCount];
+
+        long before = System.DateTime.Now.Ticks;
+
         Mesh2_Mesh();
 
-        PlyManager.Output(smoothMesh, "H:\\engine.ply");
+        Debug.Log("Mesh2_Mesh " + (System.DateTime.Now.Ticks - before) / 10000000.0);
+        before = System.DateTime.Now.Ticks;
 
-        _MeshLaplacian();
-        //_ScaleDependentLaplacian(3);
+        //PlyManager.Output(smoothMesh, "E:\\engine.ply");
+        //ObjManager.Output(smoothMesh, "E:\\engine.obj");
 
-        PlyManager.Output(smoothMesh, "H:\\engine_smooth.ply");
+        XJBG();
+
+        Debug.Log("XJBG " + (System.DateTime.Now.Ticks - before) / 10000000.0);
+        before = System.DateTime.Now.Ticks;
+
+        //_MeshLaplacian();
+        //_ScaleDependentLaplacian(1);
+        //Taubin(5, 0.5f, -0.5f);
+
+        //PlyManager.Output(smoothMesh, "E:\\engine_smooth.ply");
 
         _Mesh2Mesh();
 
-        return objMesh;
+        Debug.Log("_Mesh2Mesh " + (System.DateTime.Now.Ticks - before) / 10000000.0);
+        before = System.DateTime.Now.Ticks;
+
+        smoothMesh.Dispose();
+        smoothMesh = null;
+
+        //ObjManager.Output(objMesh, "E:\\engine_smooth.obj");
+
+        return retVec3;
     }
 
     void Mesh2_Mesh()
@@ -41,6 +65,8 @@ public class Smooth
             _v.X = objMesh.vertices[i].x;
             _v.Y = objMesh.vertices[i].y;
             _v.Z = objMesh.vertices[i].z;
+
+            retVec3[i] = objMesh.vertices[i];
 
             smoothMesh.AddVertex(_v);
         }
@@ -61,14 +87,38 @@ public class Smooth
         smoothMesh.InitPerVertexVertexAdj();
     }
 
+    void XJBG()
+    {
+        _Vector3[] tempList = new _Vector3[smoothMesh.Vertices.Count];
+        for (int i = 0; i < smoothMesh.Vertices.Count; i++)
+        {
+            tempList[i] = smoothMesh.Vertices[i];
+
+            tempList[i].X += UnityEngine.Random.Range(-0.5f, 0.5f);
+            tempList[i].Y += UnityEngine.Random.Range(-0.5f, 0.5f);
+            tempList[i].Z += UnityEngine.Random.Range(-0.5f, 0.5f);
+        }
+        for (int i = 0; i < smoothMesh.Vertices.Count; i++)
+        {
+            smoothMesh.Vertices[i] = tempList[i];
+        }
+        tempList = null;
+    }
+
+    /// <summary>
+    /// 拉普拉斯算法
+    /// </summary>
     void _Mesh2Mesh()
     {
         for (int i = 0; i < smoothMesh.Vertices.Count; ++i)
         {
             _Vector3 _sv = smoothMesh.Vertices[i];
-            objMesh.vertices[i].x = _sv.X;
-            objMesh.vertices[i].y = _sv.Y;
-            objMesh.vertices[i].z = _sv.Z;
+
+            //Debug.Log(objMesh.vertices[i].ToString() + " -> " + _sv.X + " " + _sv.Y + " " + _sv.Z);
+
+            retVec3[i].x = _sv.X;
+            retVec3[i].y = _sv.Y;
+            retVec3[i].z = _sv.Z;
         }
     }
 
@@ -84,7 +134,29 @@ public class Smooth
         }
         for (int i = 0; i < smoothMesh.Vertices.Count; i++)
         {
+            //  生成对象
+            ////GameObject begin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            ////begin.transform.position = new Vector3(smoothMesh.Vertices[i].X, smoothMesh.Vertices[i].Y, smoothMesh.Vertices[i].Z);
+            ////begin.transform.localScale = Vector3.one * 0.1f;
+            ////((MeshRenderer)begin.GetComponent<MeshRenderer>()).material = MaterialManager.GetBeginMat();
+
             smoothMesh.Vertices[i] = tempList[i];
+
+            ////GameObject end = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            ////end.transform.position = new Vector3(tempList[i].X, tempList[i].Y, tempList[i].Z);
+            ////end.transform.localScale = Vector3.one * 0.05f;
+            ////((MeshRenderer)end.GetComponent<MeshRenderer>()).material = MaterialManager.GetEndMat();
+
+            //////Debug.DrawLine(begin.transform.position, end.transform.position);
+
+            ////LineRenderer mLine = begin.AddComponent<LineRenderer>();
+            ////mLine.SetWidth(0.1f, 0.01f);
+            ////mLine.SetVertexCount(2);
+            ////mLine.SetColors(Color.yellow, Color.yellow);
+            ////mLine.material = MaterialManager.GetEndMat();
+            ////mLine.SetPosition(0, begin.transform.position);
+            ////mLine.SetPosition(1, end.transform.position);
+            ////((MeshRenderer)mLine.GetComponent<MeshRenderer>()).enabled = true;
         }
         tempList = null;
     }
@@ -168,11 +240,61 @@ public class Smooth
         catch(Exception e)
         {
             Debug.LogException(e);
-        }
+        }  
 
         return null;
     }
 
+    #region Taubin
+    void Taubin(int iterationTime, float lambda, float mu)
+    {
+        _Vector3[] tempList = new _Vector3[smoothMesh.Vertices.Count];
+        for (int c = 0; c < iterationTime; c++)
+        {
+            for (int i = 0; i < smoothMesh.Vertices.Count; i++)
+            {
+                tempList[i] = GetSmoothedVertex_Taubin_Step(i, lambda);
+            }
+            for (int i = 0; i < smoothMesh.Vertices.Count; i++)
+            {
+                smoothMesh.Vertices[i] = tempList[i];
+            }
+            for (int i = 0; i < smoothMesh.Vertices.Count; i++)
+            {
+                tempList[i] = GetSmoothedVertex_Taubin_Step(i, mu);
+            }
+            for (int i = 0; i < smoothMesh.Vertices.Count; i++)
+            {
+                smoothMesh.Vertices[i] = tempList[i];
+            }
+        }
+        tempList = null;
+    }
+
+    _Vector3 GetSmoothedVertex_Taubin_Step(int index, float lambda)
+    {
+        float dx = 0, dy = 0, dz = 0;
+        List<long> adjVertices = smoothMesh.AdjInfos[index].VertexAdjacencyList;
+        _Vector3 p  = smoothMesh.Vertices[index];
+        if (adjVertices.Count == 0)
+            return smoothMesh.Vertices[index];
+        for (int i = 0; i < adjVertices.Count; i++)
+        {
+            _Vector3 t = smoothMesh.Vertices[(int)adjVertices[i]];
+            dx += (t.X - p.X);
+            dy += (t.Y - p.Y);
+            dz += (t.Z - p.Z);
+        }
+        dx /= adjVertices.Count;
+        dy /= adjVertices.Count;
+        dz /= adjVertices.Count;
+        float newx = lambda * dx + p.X;
+        float newy = lambda * dy + p.Y;
+        float newz = lambda * dz + p.Z;
+
+        return new _Vector3(newx, newy, newz);
+    }
+    #endregion
 
     _Mesh smoothMesh = null;
 }
