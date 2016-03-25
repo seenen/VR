@@ -8,6 +8,8 @@ public class SmoothSample : MonoBehaviour
     public Mesh sourceMesh;
     public Mesh workMesh;
 
+    Smooth s;
+
     // Use this for initialization
     void Start ()
     {
@@ -21,7 +23,7 @@ public class SmoothSample : MonoBehaviour
 
         long before = System.DateTime.Now.Ticks;
 
-        Smooth s = new Smooth(workMesh);
+        s = new Smooth(workMesh);
 
         Vector3[] smoothv = s.Exe();
 
@@ -31,6 +33,8 @@ public class SmoothSample : MonoBehaviour
 
         //SmoothGameObject(workMesh, gameObject);
         //mf.mesh = smoothMesh;
+
+        OpInit();
     }
 
     void SmoothGameObject(Mesh workMesh, GameObject root)
@@ -96,5 +100,21 @@ public class SmoothSample : MonoBehaviour
     //    //TODO : Are we missing anything?
     //    return clone;
     //}
+    #region 可视化
+    
+    void OpInit()
+    {
+        OperateMono mOperateMono = null;
 
+        mOperateMono = GameObject.Find("OperateMono").GetComponent<OperateMono>();
+
+        mOperateMono.mSmooth = s;
+    }
+
+    void InitData()
+    {
+
+    }
+
+    #endregion
 }

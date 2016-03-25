@@ -38,6 +38,8 @@ public class _Mesh : System.IDisposable
 
     public long AddFace(_Triangle tri)
     {
+        //Debug.Log("_Mesh.AddFace " + tri.P0Index + " " + tri.P1Index + " " + tri.P2Index);
+
         long index = (long)Faces.Count;
         Faces.Add(tri);
 
@@ -58,6 +60,7 @@ public class _Mesh : System.IDisposable
         int fcount = Faces.Count;
         for (int i = 0; i < vcount; i++)
         {
+            //  创建一个顶点预设列表.
             List<long> vertexAdjacencyList = new List<long>();
             if (vertexAdjacencyList == null) { return; }
             vertexAdjacencyList.Capacity = 6;
@@ -85,6 +88,12 @@ public class _Mesh : System.IDisposable
                 p2list.Add(t.P0Index);
             if (p2list.IndexOf(t.P1Index) == -1)
                 p2list.Add(t.P1Index);
+
+            AdjInfos[(int)t.P0Index].VertexAdjacencyList = p0list;
+            AdjInfos[(int)t.P1Index].VertexAdjacencyList = p1list;
+            AdjInfos[(int)t.P2Index].VertexAdjacencyList = p2list;
+
+            Debug.Log(i + " 0 的链表数量 " + AdjInfos[0].VertexAdjacencyList.Count);
         }
     }
 

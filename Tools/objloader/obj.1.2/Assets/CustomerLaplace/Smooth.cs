@@ -3,15 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Smooth
+public class Smooth : IDisposable
 {
     Mesh objMesh = null;
 
     Vector3[] retVec3;
 
+    public _Mesh smoothMesh = null;
+
     public Smooth(Mesh mesh)
     {
         objMesh = mesh;
+    }
+
+    public void Dispose()
+    {
+        if (smoothMesh != null)
+        {
+            smoothMesh.Dispose();
+            smoothMesh = null;
+
+        }
     }
 
     public Vector3[] Exe()
@@ -28,12 +40,12 @@ public class Smooth
         //PlyManager.Output(smoothMesh, "E:\\engine.ply");
         //ObjManager.Output(smoothMesh, "E:\\engine.obj");
 
-        XJBG();
+        //XJBG();
 
         Debug.Log("XJBG " + (System.DateTime.Now.Ticks - before) / 10000000.0);
         before = System.DateTime.Now.Ticks;
 
-        //_MeshLaplacian();
+        _MeshLaplacian();
         //_ScaleDependentLaplacian(1);
         //Taubin(5, 0.5f, -0.5f);
 
@@ -43,9 +55,6 @@ public class Smooth
 
         Debug.Log("_Mesh2Mesh " + (System.DateTime.Now.Ticks - before) / 10000000.0);
         before = System.DateTime.Now.Ticks;
-
-        smoothMesh.Dispose();
-        smoothMesh = null;
 
         //ObjManager.Output(objMesh, "E:\\engine_smooth.obj");
 
@@ -135,10 +144,13 @@ public class Smooth
         for (int i = 0; i < smoothMesh.Vertices.Count; i++)
         {
             //  生成对象
-            ////GameObject begin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            ////begin.transform.position = new Vector3(smoothMesh.Vertices[i].X, smoothMesh.Vertices[i].Y, smoothMesh.Vertices[i].Z);
-            ////begin.transform.localScale = Vector3.one * 0.1f;
-            ////((MeshRenderer)begin.GetComponent<MeshRenderer>()).material = MaterialManager.GetBeginMat();
+            GameObject begin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            begin.transform.position = new Vector3(smoothMesh.Vertices[i].X, smoothMesh.Vertices[i].Y, smoothMesh.Vertices[i].Z);
+            begin.transform.localScale = Vector3.one * 0.1f;
+            ((MeshRenderer)begin.GetComponent<MeshRenderer>()).material = MaterialManager.GetBeginMat();
+
+            PointMono pm = begin.AddComponent<PointMono>();
+            pm.index = i;
 
             smoothMesh.Vertices[i] = tempList[i];
 
@@ -295,6 +307,4 @@ public class Smooth
         return new _Vector3(newx, newy, newz);
     }
     #endregion
-
-    _Mesh smoothMesh = null;
 }
