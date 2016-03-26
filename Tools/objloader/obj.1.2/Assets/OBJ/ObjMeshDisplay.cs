@@ -59,7 +59,7 @@ public class ObjMeshDisplay : MonoBehaviour
     {
         triangles = content.triangles;
         normals = content.normals.ToArray();
-        vertices = content.tvertices;
+        vertices = content.vertices.ToArray();
 
         triangles_count = triangles.Length;
         normals_count = normals.Length;
@@ -105,8 +105,8 @@ public class ObjMeshDisplay : MonoBehaviour
 
         triangles_count = triangles.Length;
         normals_count = normals.Length;
-        tangents_count = vertices.Length;
-        vertices_count = tangents.Length;
+        tangents_count = tangents.Length;
+        vertices_count = vertices.Length;
 
         bUpdateGizmos = false;
     }

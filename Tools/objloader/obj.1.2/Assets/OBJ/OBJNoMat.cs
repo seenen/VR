@@ -45,11 +45,11 @@ public class OBJNoMat : MonoBehaviour
         SetGeometryData(buffer, text);
 #endif
 
-        Debug.Log("SetGeometryData " + (System.DateTime.Now.Ticks - before) / 10000000.0);
+        //Debug.Log("SetGeometryData " + (System.DateTime.Now.Ticks - before) / 10000000.0);
 
         before = System.DateTime.Now.Ticks;
 
-        Debug.Log("Build " + (System.DateTime.Now.Ticks - before) / 10000000.0);
+        //Debug.Log("Build " + (System.DateTime.Now.Ticks - before) / 10000000.0);
 
         return buffer;
     }
@@ -201,8 +201,8 @@ public class OBJNoMat : MonoBehaviour
 
         mMeshFilter.mesh.vertices = bufferCache.vertices.ToArray();
         mMeshFilter.mesh.triangles = bufferCache.triangles;
-        mMeshFilter.mesh.uv = bufferCache.uvs.ToArray();
-        mMeshFilter.mesh.normals = bufferCache.normals.ToArray();
+        //mMeshFilter.mesh.uv = bufferCache.uvs.ToArray();
+        //mMeshFilter.mesh.normals = bufferCache.normals.ToArray();
         mMeshFilter.mesh.RecalculateNormals();
         mMeshFilter.mesh.RecalculateBounds();
     }

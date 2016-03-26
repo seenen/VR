@@ -37,7 +37,7 @@ public class PointAttachmentInfo : System.IDisposable
         }
     }
 
-    public List<long> VertexAdjacencyList = new List<long>();
+    public List<long> VertexAdjacencyList;// = new List<long>();
 
-    public List<long> TriangleAdjacencyList = new List<long>();
+    public List<long> TriangleAdjacencyList;// = new List<long>();
 }

@@ -169,6 +169,9 @@ namespace libObj2Buffer
                     int[] triangles = new int[gd.faces.Count];
                     for (int j = 0; j < triangles.Length; j++) triangles[j] = j;
 
+                    for (int j = 0; j < triangles.Length; j++)
+                        triangles[j] = gd.faces[j].vi;
+
                     m.triangles = triangles;
 
                 }

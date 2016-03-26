@@ -5,15 +5,24 @@ using System;
 
 public class Smooth : IDisposable
 {
-    Mesh objMesh = null;
 
-    Vector3[] retVec3;
-
+    //  数学模型
     public _Mesh smoothMesh = null;
+
+    private bool bSmoothed = false;
 
     public Smooth(Mesh mesh)
     {
         objMesh = mesh;
+
+        smoothMesh = new _Mesh();
+    }
+
+    public Smooth(GeometryBuffer buff)
+    {
+        mGB = buff;
+
+        smoothMesh = new _Mesh();
     }
 
     public void Dispose()
@@ -26,7 +35,13 @@ public class Smooth : IDisposable
         }
     }
 
-    public Vector3[] Exe()
+    #region Mesh
+    Mesh objMesh = null;
+
+    //  返回值
+    Vector3[] retVec3;
+
+    public Vector3[] Exe_Mesh()
     {
         retVec3 = new Vector3[objMesh.vertexCount];
 
@@ -41,13 +56,13 @@ public class Smooth : IDisposable
         //ObjManager.Output(smoothMesh, "E:\\engine.obj");
 
         //XJBG();
+        //Debug.Log("XJBG " + (System.DateTime.Now.Ticks - before) / 10000000.0);
 
-        Debug.Log("XJBG " + (System.DateTime.Now.Ticks - before) / 10000000.0);
         before = System.DateTime.Now.Ticks;
 
-        _MeshLaplacian();
+        //_MeshLaplacian();
         //_ScaleDependentLaplacian(1);
-        //Taubin(5, 0.5f, -0.5f);
+        Taubin(2, 0.5f, -0.5f);
 
         //PlyManager.Output(smoothMesh, "E:\\engine_smooth.ply");
 
@@ -63,7 +78,6 @@ public class Smooth : IDisposable
 
     void Mesh2_Mesh()
     {
-        smoothMesh = new _Mesh();
 
         Debug.Log("Mesh V: " + objMesh.vertexCount + " T: " + objMesh.triangles.Length);
 
@@ -96,6 +110,97 @@ public class Smooth : IDisposable
         smoothMesh.InitPerVertexVertexAdj();
     }
 
+    void _Mesh2Mesh()
+    {
+        for (int i = 0; i < smoothMesh.Vertices.Count; ++i)
+        {
+            _Vector3 _sv = smoothMesh.Vertices[i];
+
+            //Debug.Log(objMesh.vertices[i].ToString() + " -> " + _sv.X + " " + _sv.Y + " " + _sv.Z);
+
+            retVec3[i].x = _sv.X;
+            retVec3[i].y = _sv.Y;
+            retVec3[i].z = _sv.Z;
+        }
+    }
+    #endregion
+
+    #region GeometryBuffer
+    GeometryBuffer mGB = null;
+
+    public GeometryBuffer Exe_GeometryBuffer()
+    {
+        if (bSmoothed)
+            return mGB;
+
+        long before = System.DateTime.Now.Ticks;
+
+        GeometryBuffer2_Mesh();
+
+        Debug.Log("GeometryBuffer2_Mesh " + (System.DateTime.Now.Ticks - before) / 10000000.0);
+        before = System.DateTime.Now.Ticks;
+
+        //_MeshLaplacian();
+        //_ScaleDependentLaplacian(1);
+        Taubin(2, 0.5f, -0.5f);
+
+        _Mesh2GeometryBuffer();
+
+        Debug.Log("_Mesh2GeometryBuffer " + (System.DateTime.Now.Ticks - before) / 10000000.0);
+        before = System.DateTime.Now.Ticks;
+
+        //ObjManager.Output(objMesh, "E:\\engine_smooth.obj");
+        bSmoothed = true;
+
+        return mGB;
+    }
+
+    void GeometryBuffer2_Mesh()
+    {
+        Debug.Log("GeometryBuffer V: " + mGB.vertices.Count + " T: " + mGB.triangles.Length);
+
+        /// 顶点转换
+        for (int i = 0; i < mGB.vertices.Count; ++i)
+        {
+            _Vector3 _v = new _Vector3();
+            _v.X = mGB.vertices[i].x;
+            _v.Y = mGB.vertices[i].y;
+            _v.Z = mGB.vertices[i].z;
+
+            smoothMesh.AddVertex(_v);
+        }
+
+        /// 顶点索引
+        for (int i = 0; i < mGB.triangles.Length;)
+        {
+            _Triangle _t = new _Triangle();
+            _t.P0Index = mGB.triangles[i];
+            _t.P1Index = mGB.triangles[i + 1];
+            _t.P2Index = mGB.triangles[i + 2];
+
+            smoothMesh.AddFace(_t);
+
+            i += 3;
+        }
+
+        smoothMesh.InitPerVertexVertexAdj();
+    }
+
+    void _Mesh2GeometryBuffer()
+    {
+        for (int i = 0; i < smoothMesh.Vertices.Count; ++i)
+        {
+            _Vector3 _sv = smoothMesh.Vertices[i];
+
+            //Debug.Log(objMesh.vertices[i].ToString() + " -> " + _sv.X + " " + _sv.Y + " " + _sv.Z);
+            mGB.vertices[i] = new Vector3(_sv.X, _sv.Y, _sv.Z);
+            //mGB.vertices[i].x = _sv.X;
+            //mGB.vertices[i].y = _sv.Y;
+            //mGB.vertices[i].z = _sv.Z;
+        }
+    }
+    #endregion
+
     void XJBG()
     {
         _Vector3[] tempList = new _Vector3[smoothMesh.Vertices.Count];
@@ -117,19 +222,6 @@ public class Smooth : IDisposable
     /// <summary>
     /// 拉普拉斯算法
     /// </summary>
-    void _Mesh2Mesh()
-    {
-        for (int i = 0; i < smoothMesh.Vertices.Count; ++i)
-        {
-            _Vector3 _sv = smoothMesh.Vertices[i];
-
-            //Debug.Log(objMesh.vertices[i].ToString() + " -> " + _sv.X + " " + _sv.Y + " " + _sv.Z);
-
-            retVec3[i].x = _sv.X;
-            retVec3[i].y = _sv.Y;
-            retVec3[i].z = _sv.Z;
-        }
-    }
 
     /// <summary>
     /// Laplacians this instance.
@@ -144,13 +236,13 @@ public class Smooth : IDisposable
         for (int i = 0; i < smoothMesh.Vertices.Count; i++)
         {
             //  生成对象
-            GameObject begin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            begin.transform.position = new Vector3(smoothMesh.Vertices[i].X, smoothMesh.Vertices[i].Y, smoothMesh.Vertices[i].Z);
-            begin.transform.localScale = Vector3.one * 0.1f;
-            ((MeshRenderer)begin.GetComponent<MeshRenderer>()).material = MaterialManager.GetBeginMat();
+            //GameObject begin = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //begin.transform.position = new Vector3(smoothMesh.Vertices[i].X, smoothMesh.Vertices[i].Y, smoothMesh.Vertices[i].Z);
+            //begin.transform.localScale = Vector3.one * 0.1f;
+            //((MeshRenderer)begin.GetComponent<MeshRenderer>()).material = MaterialManager.GetBeginMat();
 
-            PointMono pm = begin.AddComponent<PointMono>();
-            pm.index = i;
+            //PointMono pm = begin.AddComponent<PointMono>();
+            //pm.index = i;
 
             smoothMesh.Vertices[i] = tempList[i];
 

@@ -25,14 +25,13 @@ public class SmoothSample : MonoBehaviour
 
         s = new Smooth(workMesh);
 
-        Vector3[] smoothv = s.Exe();
+        Vector3[] smoothv = s.Exe_Mesh();
 
         workMesh.vertices = smoothv;
 
         Debug.Log("Smooth " + (System.DateTime.Now.Ticks - before) / 10000000.0);
 
-        //SmoothGameObject(workMesh, gameObject);
-        //mf.mesh = smoothMesh;
+        SmoothGameObject(workMesh, gameObject);
 
         OpInit();
     }

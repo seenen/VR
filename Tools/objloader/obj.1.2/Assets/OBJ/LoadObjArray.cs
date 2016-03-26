@@ -1,5 +1,6 @@
 ﻿//#define use_buff
-#define use_mesh
+//#define use_mesh
+#define use_model
 
 using UnityEngine;
 using System.Collections;
@@ -17,7 +18,11 @@ public class LoadObjArray : MonoBehaviour
     ArrayList mListMeshs = new ArrayList();
 #endif
 
-    int MAX_COUNT = 1;
+#if use_model
+    ArrayList mListModels = new ArrayList();
+#endif
+
+    int MAX_COUNT = 30;//1;
 
     void Start()
     {
@@ -71,6 +76,23 @@ public class LoadObjArray : MonoBehaviour
             Debug.Log("BuildWithMesh 16 " + (System.DateTime.Now.Ticks - before) / 10000000.0);
 #endif
 
+#if use_model
+            for ( int i = 1; i < MAX_COUNT + 1; i++)
+            {
+                string path = "G:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/" + i.ToString() + ".obj";
+
+                GeometryBuffer buff = mOBJNoMat.LoadeContent(File.ReadAllText(path));
+
+                mOBJNoMat.BuildNoMesh(buff);
+
+                Smooth smooth = new Smooth(buff);
+
+                mListModels.Add(smooth);
+            }
+
+            Debug.Log("BuildWithMesh 16 " + (System.DateTime.Now.Ticks - before) / 10000000.0);
+#endif
+
         }
 
         //  预生成Mesh
@@ -100,6 +122,14 @@ public class LoadObjArray : MonoBehaviour
         Mesh m = (Mesh)mListMeshs[0];
 
         mOBJNoMat.Build(m);
+#endif
+
+#if use_model
+        Smooth m = (Smooth)mListModels[0];
+        GeometryBuffer gb = m.Exe_GeometryBuffer();
+        //GeometryBuffer gb = (GeometryBuffer)mListModels[0];
+
+        mOBJNoMat.Build(gb);
 #endif
     }
 
@@ -142,6 +172,28 @@ public class LoadObjArray : MonoBehaviour
 
         } while (true);
 
+#endif
+
+#if use_model
+        int factor = 1;
+        do
+        {
+            Smooth smooth = (Smooth)mListModels[index];
+
+            GeometryBuffer content = smooth.Exe_GeometryBuffer();
+
+            mOBJNoMat.DeformationMT(content);
+
+            index += factor;
+
+            if (index == MAX_COUNT - 1) factor = -1;
+
+            if (index == 0) factor = 1;
+
+            //yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(0.033f);
+
+        } while (true);
 #endif
 
     }

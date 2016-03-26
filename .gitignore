@@ -56,3 +56,5 @@ Temporary Items
 *.pdb
 *.pch
 *\Library\*
+Tools/objloader/obj.1.2/Library/*
+Tools\objloader\obj.1.2\Library\*

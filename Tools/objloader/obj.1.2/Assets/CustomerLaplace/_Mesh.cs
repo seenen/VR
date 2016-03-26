@@ -53,8 +53,14 @@ public class _Mesh : System.IDisposable
 
         IsPerVertexVertexInfoEnabled = true;
 
-        if (AdjInfos.Count != Vertices.Count)
-            ListExtra.Resize<PointAttachmentInfo>(AdjInfos, Vertices.Count);
+        for (int i = 0; i < Vertices.Count; ++i)
+        {
+            PointAttachmentInfo info = new PointAttachmentInfo();
+            AdjInfos.Add(info);
+        }
+
+        //if (AdjInfos.Count != Vertices.Count)
+        //    ListExtra.Resize<PointAttachmentInfo>(AdjInfos, Vertices.Count);
 
         int vcount = Vertices.Count;
         int fcount = Faces.Count;
@@ -69,10 +75,19 @@ public class _Mesh : System.IDisposable
 
         for (int i = 0; i < fcount; i++)
         {
+            //Debug.Log("Faces: " + i);
+
+            //if (i == 719)
+            //{
+            //    Debug.Log("PPP");
+            //}
             _Triangle t = Faces[i];
-            List<long> p0list = AdjInfos[(int)t.P0Index].VertexAdjacencyList;
-            List<long> p1list = AdjInfos[(int)t.P1Index].VertexAdjacencyList;
-            List<long> p2list = AdjInfos[(int)t.P2Index].VertexAdjacencyList;
+            int index0 = (int)t.P0Index;
+            int index1 = (int)t.P1Index;
+            int index2 = (int)t.P2Index;
+            List<long> p0list = AdjInfos[index0].VertexAdjacencyList;
+            List<long> p1list = AdjInfos[index1].VertexAdjacencyList;
+            List<long> p2list = AdjInfos[index2].VertexAdjacencyList;
 
             if (p0list.IndexOf(t.P1Index) == -1)
                 p0list.Add(t.P1Index);
@@ -89,11 +104,11 @@ public class _Mesh : System.IDisposable
             if (p2list.IndexOf(t.P1Index) == -1)
                 p2list.Add(t.P1Index);
 
-            AdjInfos[(int)t.P0Index].VertexAdjacencyList = p0list;
-            AdjInfos[(int)t.P1Index].VertexAdjacencyList = p1list;
-            AdjInfos[(int)t.P2Index].VertexAdjacencyList = p2list;
+            AdjInfos[index0].VertexAdjacencyList = p0list;
+            AdjInfos[index1].VertexAdjacencyList = p1list;
+            AdjInfos[index2].VertexAdjacencyList = p2list;
 
-            Debug.Log(i + " 0 的链表数量 " + AdjInfos[0].VertexAdjacencyList.Count);
+            //Debug.Log(i + " 0 的链表数量 " + AdjInfos[0].VertexAdjacencyList.Count);
         }
     }
 
@@ -104,8 +119,14 @@ public class _Mesh : System.IDisposable
 
         IsPerVertexTriangleInfoEnabled = true;
 
-        if (AdjInfos.Count != Vertices.Count)
-            ListExtra.Resize<PointAttachmentInfo>(AdjInfos, Vertices.Count);
+        for (int i = 0; i < Vertices.Count; ++i)
+        {
+            PointAttachmentInfo info = new PointAttachmentInfo();
+            AdjInfos.Add(info);
+        }
+
+        //if (AdjInfos.Count != Vertices.Count)
+        //    ListExtra.Resize<PointAttachmentInfo>(AdjInfos, Vertices.Count);
 
         for (int i = 0; i < Vertices.Count; i++)
         {
@@ -128,19 +149,27 @@ public class _Mesh : System.IDisposable
 
     public void ClearPerVertexVertexAdj()
     {
-        if (!IsPerVertexVertexInfoEnabled)
-            return;
-
-        for (int i = 0; i < Vertices.Count; i++)
+        try
         {
-            if (AdjInfos[i].VertexAdjacencyList != null)
+            if (!IsPerVertexVertexInfoEnabled)
+                return;
+
+            for (int i = 0; i < Vertices.Count; i++)
             {
-                AdjInfos[i].VertexAdjacencyList.Clear();
-                AdjInfos[i].Dispose();
-                AdjInfos[i].VertexAdjacencyList = null;
+                if (AdjInfos[i].VertexAdjacencyList != null)
+                {
+                    AdjInfos[i].VertexAdjacencyList.Clear();
+                    AdjInfos[i].Dispose();
+                    AdjInfos[i].VertexAdjacencyList = null;
+                }
             }
+            IsPerVertexVertexInfoEnabled = false;
+
         }
-        IsPerVertexVertexInfoEnabled = false;
+        catch(Exception e)
+        {
+            Debug.LogWarning(e);
+        }
     }
 
     public void ClearPerVertexTriangleAdj()

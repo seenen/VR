@@ -168,9 +168,12 @@ public class GeometryBuffer
 				    gs[i].GetComponent<Renderer>().material = mats[gd.materialName];
 
                 triangles = new int[gd.faces.Count];
-				for(int j = 0; j < triangles.Length; j++) triangles[j] = j;
-				
-				m.triangles = triangles;
+				//for(int j = 0; j < triangles.Length; j++) triangles[j] = j;
+
+                for (int j = 0; j < triangles.Length; j++)
+                    triangles[j] = gd.faces[j].vi;
+
+                m.triangles = triangles;
 				
 			}
             else
@@ -197,9 +200,6 @@ public class GeometryBuffer
         return m;
 	}
 
-    public Vector3[] tvertices;
-    public Vector2[] tuvs;
-    public Vector3[] tnormals;
     public int[] triangles;
 
     public bool PopulateMeshesNoMesh(GameObject[] gs, Dictionary<string, Material> mats)
@@ -212,9 +212,9 @@ public class GeometryBuffer
 
             if (od.name != "default") gs[i].name = od.name;
 
-            tvertices = new Vector3[od.allFaces.Count];
-            tuvs = new Vector2[od.allFaces.Count];
-            tnormals = new Vector3[od.allFaces.Count];
+            Vector3[] tvertices = new Vector3[od.allFaces.Count];
+            Vector2[] tuvs = new Vector2[od.allFaces.Count];
+            Vector3[] tnormals = new Vector3[od.allFaces.Count];
 
             int k = 0;
             foreach (FaceIndices fi in od.allFaces)
@@ -233,6 +233,9 @@ public class GeometryBuffer
 
                 triangles = new int[gd.faces.Count];
                 for (int j = 0; j < triangles.Length; j++) triangles[j] = j;
+
+                for (int j = 0; j < triangles.Length; j++)
+                    triangles[j] = gd.faces[j].vi;
 
             }
             else
