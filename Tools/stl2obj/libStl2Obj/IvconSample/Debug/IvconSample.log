@@ -1,79 +1,67 @@
-﻿生成启动时间为 2016/3/26 0:08:48。
-     1>项目“G:\GitHub\VR\Tools\stl2obj\libStl2Obj\IvconSample\IvconSample.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         G:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ivcon.cpp stdafx.cpp
-         stdafx.cpp
-         ivcon.cpp
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2703): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2704): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2705): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2740): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2741): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2742): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(3035): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(3036): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(3037): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(4212): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(4239): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(6569): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12081): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12085): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12088): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12094): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12098): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12659): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12663): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12664): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12721): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12725): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12727): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(16150): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(16151): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(16152): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17793): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17894): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17901): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17902): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17903): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17905): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17906): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17907): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17909): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17910): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17911): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(19225): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(19226): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(19227): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20150): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20151): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20152): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20154): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20155): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20156): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20162): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20163): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20164): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20166): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20168): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20169): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20170): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20172): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20173): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20174): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20176): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20177): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20178): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20180): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20182): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20183): warning C4305: “=”: 从“double”到“float”截断
-     1>g:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20184): warning C4305: “=”: 从“double”到“float”截断
-         正在生成代码...
-       Link:
-         G:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\IvconSample.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\IvconSample.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\IvconSample.lib" /MACHINE:X86 Debug\ivcon.obj
-         Debug\stdafx.obj
-         IvconSample.vcxproj -> G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\IvconSample.exe
-     1>已完成生成项目“G:\GitHub\VR\Tools\stl2obj\libStl2Obj\IvconSample\IvconSample.vcxproj”(Build 个目标)的操作。
-
-已成功生成。
-
-已用时间 00:00:01.82
+﻿  stdafx.cpp
+  ivcon.cpp
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2703): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2704): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2705): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2740): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2741): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(2742): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(3035): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(3036): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(3037): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(4212): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(4239): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(6569): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12081): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12085): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12088): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12094): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12098): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12659): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12663): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12664): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12721): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12725): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(12727): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(16150): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(16151): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(16152): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17793): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17894): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17901): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17902): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17903): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17905): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17906): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17907): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17909): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17910): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(17911): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(19225): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(19226): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(19227): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20150): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20151): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20152): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20154): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20155): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20156): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20162): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20163): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20164): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20166): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20168): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20169): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20170): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20172): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20173): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20174): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20176): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20177): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20178): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20180): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20182): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20183): warning C4305: “=”: 从“double”到“float”截断
+f:\github\vr\tools\stl2obj\libstl2obj\ivconsample\ivcon.cpp(20184): warning C4305: “=”: 从“double”到“float”截断
+  正在生成代码...
+  IvconSample.vcxproj -> F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\IvconSample.exe

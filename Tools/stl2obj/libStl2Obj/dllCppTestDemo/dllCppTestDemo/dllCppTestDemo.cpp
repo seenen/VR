@@ -74,7 +74,7 @@ void DllTest()
 	//	动态调用
 	Dlltest maopao1;
 	HINSTANCE hdll;
-	hdll = LoadLibrary(TEXT("G:/GitHub/VR/Tools/stl2obj/libStl2Obj/dllCppTest/Debug/dllCppTest.dll"));
+	hdll = LoadLibrary(TEXT("F:/GitHub/VR/Tools/stl2obj/libStl2Obj/dllCppTest/Debug/dllCppTest.dll"));
 	if (hdll == NULL)
 	{
 		cout << " LoadLibrary LastError : " << GetLastError() << endl;
@@ -104,7 +104,7 @@ void STLTest(char* filepath)
 	//	动态调用
 	Dllstl2obj maopao1;
 	HINSTANCE hdll;
-	hdll = LoadLibrary(TEXT("G:/GitHub/VR/Tools/stl2obj/libStl2Obj/dllCppTest/Debug/dllCppTest.dll"));
+	hdll = LoadLibrary(TEXT("F:/GitHub/VR/Tools/stl2obj/libStl2Obj/dllCppTest/Debug/dllCppTest.dll"));
 	if (hdll == NULL)
 	{
 		cout << " LoadLibrary LastError : " << GetLastError() << endl;
@@ -133,7 +133,7 @@ void STLTest(char* filepath)
 
 			dwStart = GetTickCount();
 
-			sprintf_s(tmp, "G:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/%d.stl", i);
+			sprintf_s(tmp, "F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/%d.stl", i);
 
 			//CopyFile(filepath, tmp);
 
@@ -160,7 +160,7 @@ int main()
 {
 	//DllTest();
 
-	STLTest("G:/GitHub/VR/Tools/stl2obj/Resources/dannang_after.stl");
+	STLTest("F:/GitHub/VR/Tools/stl2obj/Resources/dannang_after.stl");
 
 	getchar();
 

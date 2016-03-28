@@ -79,7 +79,7 @@ public class LoadObjArray : MonoBehaviour
 #if use_model
             for ( int i = 1; i < MAX_COUNT + 1; i++)
             {
-                string path = "G:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/" + i.ToString() + ".obj";
+                string path = "F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/" + i.ToString() + ".obj";
 
                 GeometryBuffer buff = mOBJNoMat.LoadeContent(File.ReadAllText(path));
 

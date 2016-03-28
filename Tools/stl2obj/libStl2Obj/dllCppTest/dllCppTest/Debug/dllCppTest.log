@@ -1,32 +1,14 @@
-﻿生成启动时间为 2016/3/25 23:01:55。
-     1>项目“G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\dllCppTest\dllCppTest.vcxproj”在节点 2 上(Rebuild 个目标)。
-     1>ClCompile:
-         G:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D DLLCPPTEST_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt /D _CRT_SECURE_NO_WARNINGS Smooth.cpp stl2obj.cpp STLReader.cpp UtilFile.cpp UtilString.cpp
-         UtilString.cpp
-     1>g:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\utilstring.cpp(27): warning C4018: “>”: 有符号/无符号不匹配
-         UtilFile.cpp
-         STLReader.cpp
-     1>g:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(54): warning C4018: “<”: 有符号/无符号不匹配
-     1>g:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(228): warning C4018: “<”: 有符号/无符号不匹配
-     1>g:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(230): warning C4018: “<”: 有符号/无符号不匹配
-         stl2obj.cpp
-         Smooth.cpp
-         正在生成代码...
-     1>g:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(233): warning C4715: “STLReader::Write2Obj”: 不是所有的控件路径都返回值
-       Link:
-         G:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.lib" /MACHINE:X86 /DLL Debug\Smooth.obj
-         Debug\stl2obj.obj
-         Debug\STLReader.obj
-         Debug\UtilFile.obj
-         Debug\UtilString.obj
-           正在创建库 G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.lib 和对象 G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.exp
-         dllCppTest.vcxproj -> G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.dll
-       PostBuildEvent:
-         copy G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.dll G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\dllCppTest\..\..\..\libStl2ObjUnitySample\Assets\Plugins\x86\
-         :VCEnd
-         已复制         1 个文件。
-     1>已完成生成项目“G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\dllCppTest\dllCppTest.vcxproj”(Rebuild 个目标)的操作。
-
-已成功生成。
-
-已用时间 00:00:02.77
+﻿  UtilString.cpp
+f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\utilstring.cpp(27): warning C4018: “>”: 有符号/无符号不匹配
+  UtilFile.cpp
+  STLReader.cpp
+f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(54): warning C4018: “<”: 有符号/无符号不匹配
+f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(228): warning C4018: “<”: 有符号/无符号不匹配
+f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(230): warning C4018: “<”: 有符号/无符号不匹配
+  stl2obj.cpp
+  Smooth.cpp
+  正在生成代码...
+f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(233): warning C4715: “STLReader::Write2Obj”: 不是所有的控件路径都返回值
+    正在创建库 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.lib 和对象 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.exp
+  dllCppTest.vcxproj -> F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.dll
+          1 file(s) copied.
