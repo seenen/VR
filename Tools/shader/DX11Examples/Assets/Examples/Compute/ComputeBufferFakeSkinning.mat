@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!header
+SerializedFile:
+  m_TargetPlatform: 4294967294
+  m_UserInformation: 
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ComputeBufferFakeSkinning
+  m_Shader: {fileID: 4800000, guid: 230d2b0dfae34c042be7832f2c1f86a6, type: 1}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: b47ee867b2bd6754ab8b6840c7f312f6, type: 1}
+          m_Scale: {x: 4.000000, y: 4.000000}
+          m_Offset: {x: 0.000000, y: 0.000000}
+    m_Floats: {}
+    m_Colors: {}
