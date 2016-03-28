@@ -79,3 +79,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.bin
+*.info
+*.pdb
