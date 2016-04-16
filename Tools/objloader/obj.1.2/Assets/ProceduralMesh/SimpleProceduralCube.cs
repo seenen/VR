@@ -70,7 +70,7 @@ public class SimpleProceduralCube : MonoBehaviour {
 		
 		mesh.triangles = triangles.ToArray();
 
-		mesh.uv = uvs.ToArray();
+		//mesh.uv = uvs.ToArray();
 
 		GetComponent<Renderer>().material = new Material(Shader.Find("Diffuse"));
 		

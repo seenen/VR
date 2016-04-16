@@ -10,9 +10,9 @@ public class ObjImporterSample : MonoBehaviour
     // Use this for initialization
     void Start () {
         ObjImporter ob = new ObjImporter();
-        ms = ob.AnlyFile("F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/1.obj");
+        //ms = ob.AnlyFile("G:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/1.obj");
 
-        mesh = ob.ImportFile("F:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/1.obj");
+        mesh = ob.ImportFile("G:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/1.obj");
     }
 	
 	// Update is called once per frame

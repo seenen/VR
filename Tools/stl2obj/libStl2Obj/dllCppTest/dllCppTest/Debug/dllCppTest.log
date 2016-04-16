@@ -1,14 +1,2 @@
-﻿  UtilString.cpp
-f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\utilstring.cpp(27): warning C4018: “>”: 有符号/无符号不匹配
-  UtilFile.cpp
-  STLReader.cpp
-f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(54): warning C4018: “<”: 有符号/无符号不匹配
-f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(228): warning C4018: “<”: 有符号/无符号不匹配
-f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(230): warning C4018: “<”: 有符号/无符号不匹配
-  stl2obj.cpp
-  Smooth.cpp
-  正在生成代码...
-f:\github\vr\tools\stl2obj\libstl2obj\dllcpptest\dllcpptest\stlreader.cpp(233): warning C4715: “STLReader::Write2Obj”: 不是所有的控件路径都返回值
-    正在创建库 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.lib 和对象 F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.exp
-  dllCppTest.vcxproj -> F:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.dll
-          1 file(s) copied.
+﻿  dllCppTest.vcxproj -> G:\GitHub\VR\Tools\stl2obj\libStl2Obj\dllCppTest\Debug\dllCppTest.dll
+  已复制         1 个文件。
