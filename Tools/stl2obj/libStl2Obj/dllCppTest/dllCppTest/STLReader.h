@@ -5,6 +5,7 @@
 class STLReader
 {
 	vector<vec3f> vec1;
+	vector<vec3f> normals;
 	vector<face> myvector;
 
 

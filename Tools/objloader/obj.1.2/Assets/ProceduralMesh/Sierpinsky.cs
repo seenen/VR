@@ -98,7 +98,7 @@ public class Sierpinsky : MonoBehaviour {
 		
 		mesh.RecalculateNormals();
 		mesh.RecalculateBounds();
-		mesh.Optimize();
+		;
 		
 		// clean up
 		vertices.Clear();

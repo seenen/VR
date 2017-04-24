@@ -1,4 +1,6 @@
-﻿Shader "Custom/Research/Normal Map" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+Shader "Custom/Research/Normal Map" {
 	Properties {
 		_Color ("Color Tint", Color) = (1.0,1.0,1.0,1.0)
 		_MainTex ("Diffuse Texture", 2D) = "white" {}
@@ -62,7 +64,7 @@
 				o.binormalWorld = normalize(cross(o.normalWorld, o.tangentWorld) * v.tangent.w); // Binormal direction
 				
 				o.pos = mul(UNITY_MATRIX_MVP, v.vertex); // Vertex MVP position
-				o.worldPos = mul(_Object2World, v.vertex); // Vertex world position
+				o.worldPos = mul(unity_ObjectToWorld, v.vertex); // Vertex world position
 				o.tex = v.texcoord; // Texture coordenate
 				
 				return o;
@@ -191,7 +193,7 @@
 				o.binormalWorld = normalize(cross(o.normalWorld, o.tangentWorld) * v.tangent.w); // Binormal direction
 				
 				o.pos = mul(UNITY_MATRIX_MVP, v.vertex); // Vertex MVP position
-				o.worldPos = mul(_Object2World, v.vertex); // Vertex world position
+				o.worldPos = mul(unity_ObjectToWorld, v.vertex); // Vertex world position
 				o.tex = v.texcoord; // Texture coordenate
 				
 				return o;

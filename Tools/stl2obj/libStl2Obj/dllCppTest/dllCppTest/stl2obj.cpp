@@ -4,6 +4,11 @@
 
 #include "STLReader.h"
 
+int TestInt()
+{
+	return 0;
+}
+
 long long dlltest()
 {
 	long long a = 1;

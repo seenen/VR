@@ -70,7 +70,7 @@ public class Tetrahedron : MonoBehaviour {
 		
 		mesh.RecalculateNormals();
 		mesh.RecalculateBounds();
-		mesh.Optimize();
+		;
 	}
 	
 	// Use this for initialization

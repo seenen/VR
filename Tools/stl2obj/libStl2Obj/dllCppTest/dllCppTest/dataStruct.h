@@ -33,6 +33,8 @@ struct vec3f
 
 struct face
 {
+	vec3f normals[1];
+
 	vec3f verts[3];
 	face operator=(const face &f)
 	{

@@ -33,8 +33,21 @@ int STLReader::AsciiSTLReader(const char* filename)
 		{
 			face temp;
 			fscanf(filein, "%s", str);
-			fscanf(filein, "%f %f %f", &x, &y, &z);
+
+			///	·¨Ïß
+			{
+				fscanf(filein, "%f %f %f", &x, &y, &z);
+				temp.normals[0].x = x;
+				temp.normals[0].y = y;
+				temp.normals[0].z = z;
+				temp.normals[0].index = normals.size() + 1;
+				normals.push_back(temp.normals[0]);
+
+			}
+
 			fgets(buf, sizeof(buf), filein);//...might be '\0'
+
+			///	¶¥µã
 			fgets(buf, sizeof(buf), filein);//skip "outer loop"
 			for (int k = 0; k<3; k++)
 			{
@@ -227,7 +240,9 @@ int STLReader::Write2Obj(const char* filepath, const char* filename)
 	fprintf(fileout, "# %d vertex %d face\n", (int)vec1.size(), (int)myvector.size());
 	for (int j = 0; j<vec1.size(); j++)
 		fprintf(fileout, "v %f %f %f\n", vec1[j].x, vec1[j].y, vec1[j].z);
-	for (int j = 0; j<myvector.size(); j++)
+	for (int j = 0; j<normals.size(); j++)
+		fprintf(fileout, "n %f %f %f\n", normals[j].x, normals[j].y, normals[j].z);
+	for (int j = 0; j < myvector.size(); j++)
 		fprintf(fileout, "f %d %d %d\n", myvector[j].verts[0].index, myvector[j].verts[1].index, myvector[j].verts[2].index);
 	fclose(fileout);
 }

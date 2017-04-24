@@ -74,7 +74,7 @@ public class TetrahedronUV : MonoBehaviour {
 		
 		mesh.RecalculateNormals();
 		mesh.RecalculateBounds();
-		mesh.Optimize();
+		;
 	}
 	
 	// Use this for initialization

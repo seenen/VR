@@ -3,4 +3,8 @@
   <PropertyGroup>
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommandArguments>G:\GitHub\VR\Tools\stl2obj\Resources\DataFile_NormalObj\1.stl</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

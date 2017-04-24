@@ -127,13 +127,14 @@ void STLTest(char* filepath)
 		DWORD dwStart, dwEnd, dwCount = 0;
 
 #pragma omp parallel for   //特别注意点。
-		for (int i = 1; i < 37; ++i)
+		for (int i = 1; i < 2; ++i)
 		{
 			memset(tmp, 0, MAX_PATH);
 
 			dwStart = GetTickCount();
 
-			sprintf_s(tmp, "G:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/%d.stl", i);
+			//sprintf_s(tmp, "G:/GitHub/VR/Tools/stl2obj/Resources/DataFileObj/%d.stl", i);
+			sprintf_s(tmp, "G:/GitHub/VR/Tools/stl2obj/Resources/DataFile_NormalObj/%d.stl", i);
 
 			//CopyFile(filepath, tmp);
 

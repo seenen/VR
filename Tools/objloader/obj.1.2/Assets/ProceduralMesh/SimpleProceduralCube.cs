@@ -76,6 +76,6 @@ public class SimpleProceduralCube : MonoBehaviour {
 		
 		mesh.RecalculateNormals(); 
 		mesh.RecalculateBounds (); 
-		mesh.Optimize();
+		;
 	} 
 }
